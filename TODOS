@@ -42,3 +42,5 @@ Melhorar a documentação do Swagger
 Melhorar performance dos assets do frontend, adicionando em um CDN ou algo do tipo.
 
 
+    compression cors dotenv express http-status-codes mongoose node-fetch
+    

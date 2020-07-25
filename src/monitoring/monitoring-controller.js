@@ -1,24 +1,35 @@
 const router = require('express').Router()
 const { OK, CREATED,  } = require('http-status-codes')
+const service = require('./monitoring-service')
 
-router.get('/', (req, res) => { 
-    res.status(OK).send(['List all monitoring by filter (name, url, regularity)'])
+router.get('/', (req, res) => {
+    console.log('Find monitoring by filter')
+    return service.findByFilter(req.query)
+        .then(monitorings => res.status(OK).send(monitorings))
 })
 
 router.get('/:id', (req, res) => {
-    res.status(OK).send('Find monitoring by id')
+    console.log('Find monitoring by id')
+    return service.findById(req.params.id)
+        .then(monitoring => res.status(OK).send(monitoring))
 })
 
 router.post('/', (req, res) => {
-    res.status(CREATED).send('Create new monitoring')
+    console.log('Create new monitoring')
+    return service.create(req.body)
+        .then((monitoring => res.status(CREATED).send(monitoring)))
 })
 
 router.put('/:id', (req, res) => {
-    res.status(OK).send('Update monitoring by id')
+    console.log('Update monitoring')
+    return service.update(req.params.id, req.body)
+        .then(() => res.status(OK).end())
 })
 
 router.delete('/:id', (req, res) => {
-    res.status(OK).send('Delete monitoring by id')
+    console.log('Delete monitoring by id')
+    return service.delete(req.params.id)
+        .then(() => res.status(OK).end())
 })
 
 module.exports = router

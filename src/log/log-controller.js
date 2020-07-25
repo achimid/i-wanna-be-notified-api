@@ -1,30 +1,19 @@
 const router = require('express').Router()
 const { OK } = require('http-status-codes')
+const service = require('./log-service')
 
-const logModel = require('./log-model')
-const { clearObj } = require('../utils/commons')
 
 router.get('/', (req, res) => {
-    const { startDate, endDate, uuid, type } =  req.query
-    const filter = clearObj({ uuid })
-    
-    if (startDate && endDate) filter.createdAt = {'$gte': startDate, '$lt': endDate}
-
-    return logModel
-        .find(filter).lean()
-        .then(async (logs) => {
-            if (type == 'text') return logs.map(formatLog)
-            return logs
-        })
+    console.log('Find log by filter')
+    return service.findByFilter(req.query)
         .then(logs => res.status(OK).send(logs))
 })
 
-const formatLog = (l) => `${l.uuid}, [${l.level || 0}], ${l.executionTime || '0ms'}, ${l.log}, ${l.extra ? JSON.stringify(l.extra) : ''}`
-
-router.get('/:id', (req, res) => {    
-    return logModel
-        .findById(req.params.id).lean()
+router.get('/:id', (req, res) => {
+    console.log('Find log by id')
+    return service.findById(req.params.id)
         .then(log => res.status(OK).send(log))
 })
+
 
 module.exports = router
