@@ -1,3 +1,4 @@
+const { v4 } = require('uuid')
 const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
@@ -10,6 +11,10 @@ const schema = mongoose.Schema({
         required: true 
     },
     uuid: { 
+        type: String,
+        default: v4()
+    },
+    monitoringId: { 
         type: String
     },
     level: { 
