@@ -3,8 +3,8 @@ const producer = require('./execution-producer')
 const executionModel = require('./execution-model')
 
 const findByFilter = (filter) => {
-    const { uuid, url, isSuccess, level, hashTarget } =  filter
-    filter = clearObj({ uuid, url, isSuccess, level, hashTarget })
+    const { uuid, url, isSuccess, level, hashTarget, monitoringId } =  filter
+    filter = clearObj({ uuid, url, isSuccess, level, hashTarget, monitoringId })
 
     return executionModel.find(filter).lean()
 }
