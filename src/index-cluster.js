@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 const cluster = require('cluster');
 const os = require('os');
 
 // Check if current process is master.
 if (cluster.isMaster) {
   // Get total CPU cores.
-  const cpuCount = os.cpus().length;
+  const cpuCount = process.env.WEB_CONCURRENCY || os.cpus().length;
 
   // Spawn a worker for every core.
   for (let j = 0; j < cpuCount; j++) {
