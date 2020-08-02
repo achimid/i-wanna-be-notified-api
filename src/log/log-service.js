@@ -5,7 +5,9 @@ const findByFilter = (filter) => {
     filter = dateBetween({ uuid }, startDate, endDate)
 
     return logModel
-        .find(filter).lean()
+        .find(filter)
+        .sort({createdAt: 1})
+        .lean()
         .then(formatType(type))
 }
 
