@@ -16,7 +16,10 @@ const schema = mongoose.Schema({
     }],
     filter: {
         threshold: { Number },
-        words: [{ type: String }]
+        words: {
+            type: [{ type: String }],
+            default: undefined    
+        }
     },
     regularity: { 
         type: String 
@@ -34,17 +37,30 @@ const schema = mongoose.Schema({
         notifyUniqueChange: {type: Boolean},
     },
     notifications: [{
+        _id: false,
+        level: { type: Number },
 		template: { type: String },
         websocket: { type: Boolean },
-		email: [{ type: String }],
-		telegram: [{
-			bot_token: { type: String },
-			chat_id: { type: String },
-		}],
-		webhook: [{
-            url: { type: String }, 
-            method: { type: String }
-		}],
+		email: {
+            type: [{ type: String }],
+            default: undefined
+        },
+		telegram: {
+            type: [{
+                _id: false,
+                bot_token: { type: String },
+                chat_id: { type: String },
+            }],
+            default: undefined,
+        },
+		webhook: {
+            type: [{
+                _id: false,
+                url: { type: String }, 
+                method: { type: String }
+            }],
+            default: undefined
+        }
 	}],
     userId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'user'
