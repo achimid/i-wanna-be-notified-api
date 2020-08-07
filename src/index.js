@@ -19,8 +19,4 @@ app.disable('x-powered-by')
 routes(app)
     .then(databaseInit)
 
-const Log = require('./log/log-model')
-new Log({uuid: 'teste'}).save()
-
-
 app.listen(process.env.PORT)
