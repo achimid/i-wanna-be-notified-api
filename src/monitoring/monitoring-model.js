@@ -24,6 +24,9 @@ const schema = mongoose.Schema({
     regularity: { 
         type: String 
     },
+    disabled: {
+        type: Boolean
+    },
     options: {
         timeout: { type: Number },
         waitUntil: { type: String },
