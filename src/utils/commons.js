@@ -5,6 +5,13 @@ const clearObj = (obj) => {
     return obj
 }
 
+const dateBetween = (filter, startDate, endDate) => {
+    if (startDate && endDate) filter.createdAt = {'$gte': startDate, '$lt': endDate}
+    return filter
+}
+
+
 module.exports = {
-    clearObj
+    clearObj,
+    dateBetween
 }
