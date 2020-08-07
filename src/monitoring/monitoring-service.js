@@ -1,7 +1,7 @@
 const monitoringModel = require('./monitoring-model')
 const { clearObj } = require('../utils/commons')
 
-const limit = process.env.DEFAULT_ENDPOINT_LIST_LIMIT
+const limit = parseInt(process.env.DEFAULT_ENDPOINT_LIST_LIMIT)
 
 const findByFilter = (filter) => {
     const { name, url, regularity } =  filter

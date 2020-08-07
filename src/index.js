@@ -5,7 +5,7 @@ const express = require('express')
 const compression = require('compression')
 
 const routes = require('./config/routes')
-const databaseInit = require('./config/database')
+const { databaseInit } = require('./config/database')
 
 const app = express()
 
@@ -19,10 +19,8 @@ app.disable('x-powered-by')
 routes(app)
     .then(databaseInit)
 
-
-// Front-End
-const maxAge = process.env.NODE_ENV == 'production' ? 7*86400000 : 0
-app.use(express.static('public', { maxAge, extensions:['html'] }))
+const Log = require('./log/log-model')
+new Log({uuid: 'teste'}).save()
 
 
 app.listen(process.env.PORT)
