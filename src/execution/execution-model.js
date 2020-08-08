@@ -35,6 +35,8 @@ const schema = mongoose.Schema({
         waitTime: { type: Number },
         printscreen: { type: Boolean },
         printscreenFullPage: { type: Boolean },
+        levelMax: { type: Number },
+        proxy: { type: String }
     },
     filter: {
         threshold: Number,
@@ -78,7 +80,8 @@ const schema = mongoose.Schema({
     errorOnUploadPrintscreen: { type: Object },
     errorOnRemovePrintscreen: { type: Object },
     errorOnExecuteScriptTarget: { type: Object },
-    errorOnExecuteScriptTarget: { type: Object }
+    errorOnExecuteScriptTarget: { type: Object },
+    errorOnAddUserAgent: { type: Object }
 }, { versionKey: false, timestamps: true })
 
 const Execution = mongoose.model("executions", schema)

@@ -38,7 +38,8 @@ const schema = mongoose.Schema({
         printscreenFullPage: { type: Boolean },
         notifyChange: {type: Boolean},
         notifyUniqueChange: {type: Boolean},
-        levelMax: { type: Number }
+        levelMax: { type: Number },
+        proxy: { type: String }
     },
     notifications: [{
         _id: false,
