@@ -28,7 +28,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('Delete monitoring by id')
-    return service.delete(req.params.id)
+    return service.remove(req.params.id)
         .then(() => res.status(OK).end())
 })
 

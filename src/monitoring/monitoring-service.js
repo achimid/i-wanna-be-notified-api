@@ -19,7 +19,7 @@ const findById = (id) => monitoringModel.findById(id).lean()
 
 const update = (id, data) => monitoringModel.findByIdAndUpdate(id, data).then(restartTrigger)
 
-const remove = (id) => monitoringModel.deleteOne({ id }).then(restartTrigger)
+const remove = (_id) => monitoringModel.deleteOne({ _id }).then(restartTrigger)
 
 const create = (data) => new monitoringModel(data).save().then(restartTrigger)
 
