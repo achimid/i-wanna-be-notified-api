@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const config = require('../config/database-config')
+const mongoose = require('../config/mongoose-multi-db')
 
 const schema = mongoose.Schema({
     url: { 
@@ -72,6 +73,4 @@ const schema = mongoose.Schema({
     }   
 }, { versionKey: false, timestamps: true })
 
-const Monitoring = mongoose.model("monitorings", schema)
-
-module.exports = Monitoring
+module.exports = mongoose.model('monitorings', schema, config)

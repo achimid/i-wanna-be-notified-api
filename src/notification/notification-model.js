@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const config = require('../config/database-config')
+const mongoose = require('../config/mongoose-multi-db')
 
 const schema = mongoose.Schema({
     uuid: { 
@@ -29,5 +30,4 @@ const schema = mongoose.Schema({
     errorOnSendTelegram: { type: Object },
 }, { versionKey: false, timestamps: true })
 
-const Notification = mongoose.model("notifications", schema)
-module.exports = Notification
+module.exports = mongoose.model('notifications', schema, config)
