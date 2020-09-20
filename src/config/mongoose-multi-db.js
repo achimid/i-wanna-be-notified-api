@@ -43,8 +43,14 @@ const model = (collection, schema, config) => {
     
     const get = (data) => selectedModel.model(data)
     
-
-    const raw = (callback) => Promise.all(models.map(callback))
+    const raw = (callback) => Promise.all(models.map(model => new Promise((resolve) => {
+        try {
+            return resolve(callback(model))
+        } catch (error) {
+            console.error(error)
+            return resolve(error)
+        }
+    })))
 
     const one = (callback) => raw(callback).then(filter)
     
