@@ -9,7 +9,7 @@ const findByFilter = (filter) => {
 
     return NotificationModel.many(Model => Model
         .find(clearObj(filter))
-        .sort({createdAt: 1})
+        .sort({createdAt: -1})
         .limit(limit)
         .lean())
 }

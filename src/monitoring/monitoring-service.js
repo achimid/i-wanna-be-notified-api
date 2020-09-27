@@ -10,7 +10,7 @@ const findByFilter = (filter) => {
 
     return MonitoringModel.many(Model => Model
         .find(filter)
-        .sort({createdAt: 1})
+        .sort({createdAt: -1})
         .limit(limit)
         .lean())
 }

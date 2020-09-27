@@ -9,7 +9,7 @@ const findByFilter = (filter) => {
 
     return logModel
         .find(clearObj(filter))
-        .sort({createdAt: 1})
+        .sort({createdAt: -1})
         .limit(limit)
         .lean()
         .then(formatType(type))
