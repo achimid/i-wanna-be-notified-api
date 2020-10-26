@@ -41,7 +41,7 @@ const schema = mongoose.Schema({
         notifyUniqueChange: {type: Boolean},
         levelMax: { type: Number },
         proxy: { type: String },
-        temporary: {type: Boolean}
+        temporary: { type: Boolean }
     },
     notifications: [{
         _id: false,
