@@ -29,11 +29,13 @@ router.patch('/full', async (req, res) => {
     res.status(OK).send()
 })
 
-const processPoll = (execution, full) => {
+const processPoll = (body, full) => {
+
+    const { execution } = body
     const id = execution.monitoringId
 
     if (pollRequests[id]) {
-        let data = execution 
+        let data = body 
         
         if (!full) data = { 
             extractedTarget: execution.extractedTarget,
@@ -41,7 +43,7 @@ const processPoll = (execution, full) => {
             isSuccess: execution.isSuccess,
             uuid: execution.uuid,
             executionTime: execution.executionTime,
-            
+
             errorOnExecuteScriptTarget: execution.errorOnExecuteScriptTarget,
             errorOnPrintPage: execution.errorOnPrintPage,
             errorOnUploadPrintscreen: execution.errorOnUploadPrintscreen,
