@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const handleConnection = (name, connection) => {
     connection.on("error", () => {
-        console.error(`[${name}] Erro ao conextar no banco de dados...`)
+        console.error(`[${name}] Erro ao conectar no banco de dados...`)
     })
     connection.once("open", () => {
         console.info(`[${name}] Banco de dados conectado com sucesso...`)
