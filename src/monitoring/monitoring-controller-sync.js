@@ -34,7 +34,7 @@ const processPoll = (body, full) => {
     const { execution } = body
     const id = execution.monitoringId
 
-    if (pollRequests[id]) {
+    if (pollRequests[id] && execution.isLast) {
         let data = body 
         
         if (!full) data = { 
@@ -43,6 +43,7 @@ const processPoll = (body, full) => {
             isSuccess: execution.isSuccess,
             uuid: execution.uuid,
             executionTime: execution.executionTime,
+            extractedContent: execution.extractedContent,
 
             errorOnExecuteScriptTarget: execution.errorOnExecuteScriptTarget,
             errorOnPrintPage: execution.errorOnPrintPage,
