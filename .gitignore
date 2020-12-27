@@ -1,5 +1,3 @@
 node_modules/
 .vscode
-nodejs_dc.log
-nodejs_restclient.log
-resourceRegistry.log
+*.log

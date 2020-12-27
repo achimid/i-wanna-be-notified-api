@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "http-status-codes": "^1.4.0",
     "mongoose": "^5.9.25",
+    "newrelic": "^7.0.2",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.0",
     "uuid": "^8.2.0"

@@ -1,5 +1,7 @@
 require('dotenv').config()
 require('appmetrics-dash').attach()
+require('newrelic')
+
 
 const cors = require('cors')
 const express = require('express')
