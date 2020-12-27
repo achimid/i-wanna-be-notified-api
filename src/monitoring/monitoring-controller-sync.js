@@ -8,7 +8,7 @@ const pollRequests = {}
 
 router.post('/', async (req, res) => {
     setCustomParams(req.body, false)
-        .then(service.create)
+        .then(service.createTemporary)
         .then(({ id }) => pollRequests[id] = res)
 })
 
@@ -20,7 +20,7 @@ router.patch('/', async (req, res) => {
 
 router.post('/full', async (req, res) => {
     setCustomParams(req.body, true)
-        .then(service.create)
+        .then(service.createTemporary)
         .then(({ id }) => pollRequests[id] = res)
 })
 

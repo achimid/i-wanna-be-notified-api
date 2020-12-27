@@ -1,5 +1,7 @@
 const { clearObj } = require('../utils/commons')
-const { restartTriggerEvent } = require('./moitoring-producer')
+const { restartTriggerEvent } = require('./monitoring-producer')
+const { postExecution } = require('../execution/execution-service')
+
 const MonitoringModel = require('./monitoring-model')
 
 const limit = parseInt(process.env.DEFAULT_ENDPOINT_LIST_LIMIT)
@@ -23,8 +25,18 @@ const remove = (_id) => MonitoringModel.deleteOne({ _id }).then(restartTrigger)
 
 const create = (data) => MonitoringModel.create(data).then(restartTrigger)
 
+const createTemporary = (data) => MonitoringModel.create(data).then(postNewExecution)
+
 const restartTrigger = async (data) => {
     restartTriggerEvent({})
+    return data
+}
+
+const postNewExecution = async (data) => {
+    console.log('Adding new execution on queue')
+    
+    postExecution({...data.toObject(), monitoringId: data._id})
+    
     return data
 }
 
@@ -33,5 +45,6 @@ module.exports = {
     findById,
     update,
     remove,
-    create
+    create,
+    createTemporary
 }
