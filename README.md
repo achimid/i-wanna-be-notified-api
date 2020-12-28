@@ -27,7 +27,7 @@ Possíveis canais para receber a notificação:
 ## Como posso utilizar o NotifyMe?
 
 <p align="justify">
-    O serviço permite que você monitore o conteúdo de uma página Web apenas informando o endereço da página, assim que o serviço identificar uma mudança de conteúdo você será notificado. Esse tipo de ação deve sempre ser realizada com muito cuidade, pois normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso, por exemplo, páginas com propagandas e datas de acesso.
+    O serviço permite que você monitore o conteúdo de uma página web apenas informando o endereço da página, assim que o serviço identificar uma mudança de conteúdo, você será notificado. Esse tipo de ação deve sempre ser realizada com muito cuidade, normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso, por exemplo, páginas com propagandas e datas de acesso.
 </p>
 
 <p align="justify">
@@ -49,6 +49,10 @@ Endereço da API:
 ```
 http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ```
+
+<p style="color: red; font-weight: bold;">
+Até o momento a utilização do serviço é grátis e sem limites. Então seja justo e não abuse.
+</p>
 
 
 ## Contextualização
