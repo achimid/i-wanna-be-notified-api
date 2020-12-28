@@ -61,7 +61,7 @@ http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 </p>
 
 <p align="justify">
-    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma <a href="#schema-monitoring">execução</a> (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma <a href="#schema-execution">execução</a> (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
 </p>
  
 <!-- Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar todos os monitoramentos cadastrados, mas também é possível criar um monitoramento anônimo. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação.  -->
@@ -106,7 +106,7 @@ GET     /notification/:id
 
 -------
 
-## Schema: montoring
+## Schema: monitoring
 
 <details>
     <summary><b>Request</b></summary>    
