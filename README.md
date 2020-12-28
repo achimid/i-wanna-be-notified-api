@@ -1,33 +1,195 @@
-# i-wanna-be-notified-api
+# [IWannaBeNotified](http://iwannabenotified.ddns.net/)
 
-Serviço hospedado no Heroku para teste => http://iwannabenotified.ddns.net/
 
-### O que é o IWannaBeNotified?
+## O que é o IWannaBeNotified?
 
-O IWannaBeNotified é um serviço de notificação de páginas da internet disponibilizado por meio de uma API REST, que permite que você monitore um site por atualizações e receba uma notificação sempre que o site tiver uma nova atualização.
+<p align="justify">
+    O IWannaBeNotified é um serviço de notificação de páginas da internet disponibilizado por meio de uma API REST, que permite que você monitore um site por atualizações e receba uma notificação sempre que houver uma mudança no site monitorado.
+</p>
 
-O serviço é customizável a ponto de você configurar quais informações você deseja extrair do site, o template que você deseja receber a notificação e até mesmo os canais que você deseja ser notificado.
+<p align="justify">
+    O serviço é customizável a ponto de configurar: quais informações você deseja monitorar dentro do site, o template que você deseja receber a notificação e até mesmo os canais que você deseja ser notificado.
+</p>
 
 Possíveis canais para receber a notificação:
 * Email
-* SMS *
-* Facebook Messenger *
-* Whatsapp *
 * Telegram
 * Web Hooks
-* Web Push *
 * Websocket
-* PubSub *
+* <s>Web Push</s> *
+* <s>PubSub</s> *
+* <s>SMS</s> *
+* <s>Facebook Messenger</s> *
+* <s>Whatsapp</s> *
 
-(* - pendente de criação)
+(* - não disponível no momento)
  
-### Como posso utilizar o NotifyMe?
+## Como posso utilizar o NotifyMe?
 
-O serviço permite que você monitore o conteúdo de uma página Web apenas informando a Url dessa página e sempre o serviço identificar uma mudança de conteúdo. Normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso (propagandas e datas)
+<p align="justify">
+    O serviço permite que você monitore o conteúdo de uma página Web apenas informando o endereço da página, assim que o serviço identificar uma mudança de conteúdo você será notificado. Esse tipo de ação deve sempre ser realizada com muito cuidade, pois normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso, por exemplo, páginas com propagandas e datas de acesso.
+</p>
 
-Além de receber simples notificações é possível receber o conteúdo extraído da página. Caso você conheça algum pouco de Javascript, é possível executar scripts para extração e manipulação do conteúdo da página antes da obtenção das informações, desta maneira você pode extrair apenas uma parte da página se desejar.
+<p align="justify">
+    A verificação do site é feita de uma forma cíclica, ou seja, de tempos em tempos o serviço acesse o site desejado para monitorar o conteúdo, é possível configurar este tempo de verificação. Assim, você irá receber a notificação o mais rapido possivel, respeitando cada ciclo, dependendo do seu propósito é possivel configurar esse tempo de execução. Também é possível configurar o monitoramento para que você receba apenas conteúdos quando forem diferentes do conteúdo encontrado anteriormente ou até mesmo conteúdos únicos.
+</p>
 
-A verificação do site é feita de uma forma cíclica, ou seja, de tempos em tempos o serviço acesse o site desejado para obter o conteúdo dele, é possível configurar este tempo de verificação. Assim, você pode receber o conteúdo sempre que esse ciclo ocorra, dependendo do seu propósito. Também é possível configurar o monitoramento para que você receba apenas conteúdos quando forem diferentes do conteúdo encontrado anteriormente (change) ou até mesmo conteúdos únicos.
+## Extração de informações - [[Web Scraping](https://pt.wikipedia.org/wiki/Coleta_de_dados_web)]
+
+<p align="justify">
+    Com o serviço do <a href="http://iwannabenotified.ddns.net/">IWannaBeNotified</a> também é possivel extrair informações da página web por meio de uma técnica chamada <a href="https://pt.wikipedia.org/wiki/Coleta_de_dados_web">Web Scraping</a>.
+    Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de Javascript ou JQuery. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
+</p>
+
+
+
+# API
+
+Endereço da API:
+```
+http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
+```
+
+
+## Contextualização
+ 
+A API permite que você cadastre intenções de monitoramento, o que na documentação é chamado de monitoramento (`/monitoring`), a request determina como o monitoramento será executado, qual a periodicidade, qual o alvo (Url do site), quais os scripts que serão executados no alvo, e como será efetuada a notificação após obter as informações do alvo.
+ 
+Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma execução (`/execution`), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site informado, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+ 
+<!-- Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar todos os monitoramentos cadastrados, mas também é possível criar um monitoramento anônimo. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação.  -->
+
+<!-- Com a utilização de um usuário é possível centralizar algumas operações como por exemplo, notificações e filtros. Ao cadastrar um filtro para o usuário, todas suas request irão respeitar esse filtro, exceto quando ela tiver um filtro próprio. Também é possível cadastrar notificações para o usuário, e quando a request não tiver uma notificação própria ele utilizará a cadastrada para o usuário. -->
+ 
+As operações são realizadas de uma forma assincrona, onde um monitoramento é cadastrado e de tempos em tempos ele irá criar uma execução e acessar a pagina e extrair as informações, assim que cada execução é finalizada, será enviado uma notificação conforme cadastrado no monitoramento. 
+
+Dito isso, é possivel utilizar um endpoint para tornar o processo sincrono e esperar as execuções terminarem, mas é valido ressaltar que o endpoint tem um **timeout request** de **30 segundos** e o endpoint em questão não é performático.
+
+
+ 
+## Documentação
+
+A seguir veja alguns dos recursos disponibilizados para utilização do serviço por meio de REST API:
+
+## Resources
+~~~
+GET     /log
+GET     /log/:id
+
+GET     /execution
+GET     /execution/:id
+
+GET     /monitoring
+GET     /monitoring/:id
+POST    /monitoring
+PUT     /monitoring/:id
+DELETE  /monitoring/:id
+
+POST    /monitoring/sync
+POST    /monitoring/sync/full
+
+GET     /notification
+GET     /notification/:id
+~~~
+
+------
+## <b>Cadastrar novo monitoramento </b> 
+Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
+
+```
+POST    /monitoring     Content-Type: application/json
+```
+
+~~~json
+{
+    "url": "http://google.com"
+}
+~~~
+
+
+<details>
+    <summary><b>Exemplo de requisição - Simples</b></summary>    
+
+~~~json
+Request:
+{
+    "url": "http://google.com"
+}
+
+
+Response:
+{
+    "extractedTarget": "asasdasd",
+    "isSuccess": true,
+    "uuid": "5486acab-2491-4749-a072-9e96ca06a267",
+    "executionTime": "1535ms",
+    "extractedContent": []
+}
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição - Completo</b></summary>    
+
+~~~json
+Request:
+{
+    "url": "http://google.com"
+}
+
+
+Response:
+{
+    "extractedTarget": "asasdasd",
+    "isSuccess": true,
+    "uuid": "5486acab-2491-4749-a072-9e96ca06a267",
+    "executionTime": "1535ms",
+    "extractedContent": []
+}
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição - Código Javascript</b></summary>    
+
+~~~javascript
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify(
+    {
+        "url":"http://google.com",
+        "scriptTarget":"[...document.querySelectorAll('a')].map(e => e.href)"
+    });
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+~~~
+</details> 
+
+
+ 
+
+--------------
+## Documentação Swagger
+
+[Documentação da API - Swagger](http://iwannabenotified.ddns.net/api/v1/docs)
+
+#### Funcionamento
+
+// TODO - Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
+
+
+
 
 ### (Ideias/Exemplos)
  
@@ -67,46 +229,3 @@ Algumas Idéias e Exemplos de utilização:
 * Criar uma aplicação onde é possível cadastrar o valor desejado de um papel do mercado de ações e quando o papel atingir determinado valor, receber um aviso, executar uma compra/venda ou até mesmo um comando desejado
 * Criar um sistema que sempre que lançar os animes que você assiste em um site de sua escolha, efetuar o download do anime automaticamente
 * Criar um sistema para monitorar quando o resultado de um concurso for publicado
-
-
-### API
- 
-Serviço hospedado no Heroku para teste => http://iwannabenotified.ddns.net/api/v1/
- 
-A API permite que você cadastre intenções de monitoramento, o que na documentação é chamado de requisição ou `request`, a request determina como o monitoramento será executado, qual a periodicidade, qual o alvo (Url do site), quais os scripts que serão executados no alvo, e como será efetuada a notificação após obter as informações do alvo.
- 
-Após cadastrar a intenção de monitoramento (request), quando chegar a hora de executar, será criado uma `execution`, essa execution é a operação de fato, ou seja, a aplicação irá acessar o site informado, executar os scripts informados, obter o conteúdo de resposta. No futuro essa execution será utilizada para efetuar os disparos das notificações.
- 
-Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar as suas próprias requests, mas também é possível criar uma request anônima. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação. 
-
-Com a utilização de um usuário é possível centralizar algumas operações como por exemplo, notificações e filtros. Ao cadastrar um filtro para o usuário, todas suas request irão respeitar esse filtro, exceto quando ela tiver um filtro próprio. Também é possível cadastrar notificações para o usuário, e quando a request não tiver uma notificação própria ele utilizará a cadastrada para o usuário.
- 
-Existe um endpoint para testar os scripts antes de cadastrar uma request, porém o endpoint é apenas para teste, ele pode demorar a responder e enfileirar as execuções.
- 
-##### Endpoints
-
-    GET  -  /notify                     - Lista todas as requisições de monitoramento cadastradas
-    
-    POST -  /notify                     - Cadastrar uma requisição de monitoramentos
-    
-    POST -  /notify/:id/execute         - Executa uma requisição previamente cadastrada
-    
-    POST -  /execute                    - Executa uma requisição com a intenção de pré-visualizar a execução dos scripts
-    
-    GET  -  /execute                    - Executa uma requisição com a intenção de pré-visualizar a execução dos scripts
-    
-    POST -  /user                       - Efetua a criação de um usuário
-    
-    GET  -  /user/current               - Recupera o usuário baseado no JWT
-    
-    POST -  /user/login                 - Efetua a autenticação(login) do usuário
-    
-    POST -  /user/:id/notifications     - Adiciona uma nova notificação geral para o usuário que será utilizada para todas as requisições que não possui nenhuma notificação informada
- 
-// TODO - Criar exemplos de utilização para cada endpoint...
- 
-[Documentação da API - Swagger](http://iwannabenotified.ddns.net/api/v1/docs)
-
-#### Funcionamento
-
-// TODO - Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
