@@ -504,58 +504,6 @@ fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring", requ
 
 
 
-
-
-------
-
-Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
-
-```
-POST    ________     Content-Type: application/json
-```
-
-~~~json
-
-~~~
-
-<details>
-    <summary><b>Atributos da requisição</b></summary>    
-    
-Atributo | Descrição
-:--------- | :-------
-atributo             | descrição
-
-</details> 
-
-<details>
-    <summary><b>Exemplo de requisição - Simples</b></summary>    
-
-~~~json
-
-~~~
-
-</details> 
-
-<details>
-    <summary><b>Exemplo de requisição - Completo</b></summary>    
-
-~~~json
-
-~~~
-</details> 
-
-<details>
-    <summary><b>Exemplo de código - Javascript</b></summary>    
-
-~~~javascript
-
-~~~
-
-</details> 
-
-
- 
-
 --------------
 
 ## Documentação Swagger
