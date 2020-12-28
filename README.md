@@ -105,7 +105,7 @@ GET     /notification/:id
 
 ## Schema: montoring
 
-<details open>
+<details>
     <summary><b>Request</b></summary>    
     
 
@@ -261,7 +261,7 @@ atributo             | descrição
 ## Schema: execution
 
 
-<details open>
+<details>
     <summary><b>Response</b></summary>    
     
 
@@ -330,7 +330,7 @@ atributo             | descrição
 ## Schema: log
 
 
-<details open>
+<details>
     <summary><b>Response</b></summary>    
     
 
@@ -365,7 +365,7 @@ atributo             | descrição
 ## Schema: notification
 
 
-<details open>
+<details>
     <summary><b>Response</b></summary>    
     
 
