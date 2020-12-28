@@ -534,7 +534,7 @@ PUT     /monitoring/:id     Content-Type: application/json
 
 --------------
 
-## <b>Listar monitoramento </b> 
+## <b>Listar monitoramentos </b> 
 Este endpoint deve ser utilizado para listar os monitoramento, sendo possivel filtrar por parametros na query.
 
 ```
@@ -594,7 +594,7 @@ GET     /monitoring/:id     Content-Type: application/json
 
 --------------
 
-## <b>Remover monitoramento por Id </b> 
+## <b>Remover monitoramento</b> 
 Este endpoint deve ser utilizado para excluir um monitoramento utilizando do o id.
 
 ```
@@ -625,16 +625,283 @@ DELETE     /monitoring/:id     Content-Type: application/json
 --------------
 
 
-## Documentação Swagger
-
-[Documentação da API - Swagger](http://iwannabenotified.ddns.net/api/v1/docs)
-
-### Funcionamento
-
-// TODO - Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
 
 
-### Arquitetura
+
+
+
+
+## <b>Listar execuções </b> 
+Este endpoint deve ser utilizado para listar as execuções, sendo possivel filtrar por parametros na query.
+
+```
+GET     /execution     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Buscar execução</b> 
+Este endpoint deve ser utilizado para buscar uma execução utilizando o id.
+
+```
+GET     /execution/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+
+## <b>Listar logs </b> 
+Este endpoint deve ser utilizado para listar os logs gerados durante a execução do monitoramento, sendo possivel filtrar por parametros na query.
+
+```
+GET     /log     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Buscar log</b> 
+Este endpoint deve ser utilizado para buscar um log utilizando o id.
+
+```
+GET     /log/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+
+## <b>Listar notificações </b> 
+Este endpoint deve ser utilizado para listar as notificações disparadas, sendo possivel filtrar por parametros na query.
+
+```
+GET     /notification     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Buscar notificação</b> 
+Este endpoint deve ser utilizado para buscar uma notificação utilizando o id.
+
+```
+GET     /notification/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+
+## <b>Monitoramento Sincrono Temporário - Scraper - Basico</b> 
+Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
+
+Este endpoint estorna apenas algumas informações da execução, para mais informações veja os exemplos.
+
+* **Este endpoint possui uma limitação de performance.**
+* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.
+* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.
+* **Esse endpoint trabalha com enfileiramento de recursos**.
+
+```
+GET     /notification/sync     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Monitoramento Sincrono Temporário - Scraper - Completo</b> 
+Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
+
+Este endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.
+
+* **Este endpoint possui uma limitação de performance.**
+* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.
+* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.
+* **Esse endpoint trabalha com enfileiramento de recursos**.
+
+```
+GET     /notification/sync/full     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## Exemplos de integrações
+
+// TODO: Colocar alguns exemplos de integrações com o webSockets, webhooks e telegramChat.
+
+## Funcionamento
+
+// TODO: Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
+
+
+## Arquitetura
+
+// TODO: Explicar sobre a arquitetura das aplicações, a comunicação entre elas, os processos asyncronos, o pool de workers.
+
+## Outros
 
 
 ### (Ideias/Exemplos)
