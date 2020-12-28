@@ -50,9 +50,11 @@ Endereço da API:
 http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ```
 
-<p style="color: red; font-weight: bold;">
-Até o momento a utilização do serviço é grátis e sem limites. Então seja justo e não abuse.
-</p>
+<div class="text-red mb-2">
+  <b>
+    Até o momento a utilização do serviço é grátis e sem limites. Então seja justo e não abuse.
+  </b>
+</div>
 
 
 ## Contextualização
