@@ -53,18 +53,26 @@ http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 
 ## Contextualização
  
-A API permite que você cadastre intenções de monitoramento, o que na documentação é chamado de monitoramento (`/monitoring`), a request determina como o monitoramento será executado, qual a periodicidade, qual o alvo (Url do site), quais os scripts que serão executados no alvo, e como será efetuada a notificação após obter as informações do alvo.
- 
-Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma execução (`/execution`), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site informado, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+<p align="justify">
+    A API permite que você cadastre intenções de monitoramento, na documentação é chamado de monitoramento (<code>/monitoring</code>). O monitoramento determina alguns parametros de execução, como por exemplo, a periodicidade, o alvo (endereço do site), quais os scripts que serão executados e como será efetuada a notificação após a extração das informações.
+</p>
+
+<p align="justify">
+    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma execução (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site informado, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+</p>
  
 <!-- Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar todos os monitoramentos cadastrados, mas também é possível criar um monitoramento anônimo. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação.  -->
 
 <!-- Com a utilização de um usuário é possível centralizar algumas operações como por exemplo, notificações e filtros. Ao cadastrar um filtro para o usuário, todas suas request irão respeitar esse filtro, exceto quando ela tiver um filtro próprio. Também é possível cadastrar notificações para o usuário, e quando a request não tiver uma notificação própria ele utilizará a cadastrada para o usuário. -->
- 
-As operações são realizadas de uma forma assincrona, onde um monitoramento é cadastrado e de tempos em tempos ele irá criar uma execução e acessar a pagina e extrair as informações, assim que cada execução é finalizada, será enviado uma notificação conforme cadastrado no monitoramento. 
 
-Dito isso, é possivel utilizar um endpoint para tornar o processo sincrono e esperar as execuções terminarem, mas é valido ressaltar que o endpoint tem um **timeout request** de **30 segundos** e o endpoint em questão não é performático.
 
+<p align="justify">
+    As operações são realizadas de uma forma assincrona, onde um monitoramento é cadastrado e de tempos em tempos ele irá criar uma execução e acessar a pagina e extrair as informações, assim que cada execução é finalizada, será enviado uma notificação conforme cadastrado no monitoramento. 
+</p>
+
+<p align="justify">
+    Dito isso, é possivel utilizar um endpoint para tornar o processo sincrono e esperar as execuções terminarem, mas é valido ressaltar que o endpoint tem um <b>timeout request</b> de <b>30 segundos</b> e o endpoint em questão <code>(/monitoring/sync)</code> não é performático.
+</p>
 
  
 ## Documentação
@@ -187,18 +195,71 @@ fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync",
 </details> 
 
 
+
+
+
+------
+## <b>________ </b> 
+Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
+
+```
+POST    ________     Content-Type: application/json
+```
+
+~~~json
+
+~~~
+
+<details>
+    <summary><b>Atributos da requisição</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+atributo             | descrição
+
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição - Simples</b></summary>    
+
+~~~json
+
+~~~
+
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição - Completo</b></summary>    
+
+~~~json
+
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+
+~~~
+
+</details> 
+
+
  
 
 --------------
+
 ## Documentação Swagger
 
 [Documentação da API - Swagger](http://iwannabenotified.ddns.net/api/v1/docs)
 
-#### Funcionamento
+### Funcionamento
 
 // TODO - Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
 
 
+### Arquitetura
 
 
 ### (Ideias/Exemplos)
