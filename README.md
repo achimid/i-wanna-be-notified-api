@@ -100,33 +100,356 @@ GET     /notification
 GET     /notification/:id
 ~~~
 
+
+-------
+
+## Schema: montoring
+
+<details>
+    <summary><b>Request</b></summary>    
+    
+
+~~~json
+{
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "scriptContent": ["Some Javascript code, example: [document.querySelector('body').innerText]"],
+    "filter": {
+        "threshold": 0.7,
+        "words": ["apple", "google"]
+    },
+    "regularity": "*/3 * * * *",
+    "disabled": false,
+    "options": {
+        "timeout": 30000,
+        "waitUntil": "networkidle0",
+        "enableUserAgentRandom": false,
+        "useJquery": false,
+        "scriptTagUrl": "Some Javascript Tag to Inject in the page",
+        "waitTime": 100,
+        "printscreen": false,
+        "printscreenFullPage": false,
+        "notifyChange": false,
+        "notifyUniqueChange": false,
+        "levelMax": 0,
+        "proxy": "Some Proxy Url",
+        "temporary": true
+    },
+    "notifications": [{
+        "level": 0,
+		"template": "Hi My name is John - WebSocket Notification",
+        "websocket": true
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Email Notification",
+        "email": ["john@email.com"]		
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Telegram Notification",
+        "telegram": [{                
+            "bot_token": "Telegram Bot Token for integration",
+            "chat_id": "Telegram Chat Id to send message"
+        }]
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Webhook Notification",
+        "webhook": [{
+            "url": "https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback", 
+            "method": "POST"
+        }]
+    }]
+}
+~~~
+
+</details> 
+
+<details>
+    <summary><b>Response</b></summary>    
+    
+
+~~~json
+{
+    "filter": {
+        "words": [
+            "apple",
+            "google"
+        ]
+    },
+    "scriptContent": [
+        "Some Javascript code, example: [document.querySelector('body').innerText]"
+    ],
+    "_id": "5fea210085b59f15d5cdebf0",
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "regularity": "*/3 * * * *",
+    "disabled": false,
+    "options": {
+        "timeout": 30000,
+        "waitUntil": "networkidle0",
+        "enableUserAgentRandom": false,
+        "useJquery": false,
+        "scriptTagUrl": "Some Javascript Tag to Inject in the page",
+        "waitTime": 100,
+        "printscreen": false,
+        "printscreenFullPage": false,
+        "notifyChange": false,
+        "notifyUniqueChange": false,
+        "levelMax": 0,
+        "proxy": "Some Proxy Url",
+        "temporary": true
+    },
+    "notifications": [
+        {
+            "level": 0,
+            "template": "Hi My name is John - WebSocket Notification",
+            "websocket": true
+        },
+        {
+            "level": 0,
+            "template": "Hi My name is John - Email Notification",
+            "email": [
+                "john@email.com"
+            ]
+        },
+        {
+            "level": 0,
+            "template": "Hi My name is John - Telegram Notification",
+            "telegram": [
+                {
+                    "bot_token": "Telegram Bot Token for integration",
+                    "chat_id": "Telegram Chat Id to send message"
+                }
+            ]
+        },
+        {
+            "level": 0,
+            "template": "Hi My name is John - Webhook Notification",
+            "webhook": [
+                {
+                    "url": "https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback",
+                    "method": "POST"
+                }
+            ]
+        }
+    ],
+    "createdAt": "2020-12-28T18:16:32.030Z",
+    "updatedAt": "2020-12-28T18:16:32.030Z"
+}
+~~~
+
+</details> 
+
+
+
+<details>
+    <summary><b>Atributos</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+atributo             | descrição
+
+</details> 
+
 ------
-## <b>Cadastrar novo monitoramento </b> 
+
+
+## Schema: execution
+
+
+<details>
+    <summary><b>Response</b></summary>    
+    
+
+~~~json
+{
+        "_id": "5fea21be62a7dd00174ca0cb",
+        "filter": {
+            "words": [
+                "apple",
+                "google"
+            ]
+        },
+        "scriptContent": [
+            "Some Javascript code, example: [document.querySelector('body').innerText]"
+        ],
+        "extractedContent": ["[No Content]"],
+        "uuid": "d468a388-820a-4985-8561-47c24d70f15b",
+        "url": "http://google.com",
+        "scriptTarget": "[...document.querySelectorAll('a')].map(e => e.href)",
+        "createdAt": "2020-12-28T18:19:40.275Z",
+        "updatedAt": "2020-12-28T18:19:42.564Z",
+        "monitoringId": "5fea21bc58eafd001e5d39ce",
+        "startTime": "2020-12-28T18:19:40.355Z",
+        "level": 0,
+        "options": {
+            "timeout": 30000,
+            "waitUntil": "networkidle0",
+            "printscreen": false,
+            "printscreenFullPage": false
+        },
+        "extractedTarget": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"... ",
+        "endTime": "2020-12-28T18:19:41.911Z",
+        "executionTime": "1556ms",
+        "extractedTargetNormalized": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"...",
+        "isSuccess": true,
+        "hashTarget": "2d3a256612beba0c9052e39067ed9cdd",
+        "hashTargetChanged": false,
+        "hashTargetUnique": true,
+        "isLast": true,
+        "errorOnExecuteScriptTarget": { },
+        "errorOnPrintPage": { },
+        "errorOnUploadPrintscreen": { },
+        "errorOnRemovePrintscreen": { },
+        "errorOnExecuteScriptTarget": { },
+        "errorOnExecuteScriptTarget": { },
+        "errorOnAddUserAgent": { }
+    }
+~~~
+
+</details> 
+
+
+
+<details>
+    <summary><b>Atributos</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+atributo             | descrição
+
+</details> 
+
+------
+
+
+## Schema: log
+
+
+<details>
+    <summary><b>Response</b></summary>    
+    
+
+~~~json
+
+{
+    "_id": "5fea238b11d4840017e097a4",
+    "createdAt": "2020-12-28T18:00:36.100Z",
+    "uuid": "d468a388-820a-4985-8561-47c24d70f15b",
+    "executionTime": "0ms",
+    "log": "Starting extraction",
+    "level": "0"
+}
+        
+~~~
+
+</details> 
+
+
+
+<details>
+    <summary><b>Atributos</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+atributo             | descrição
+
+</details> 
+
+------
+
+## Schema: notification
+
+
+<details>
+    <summary><b>Response</b></summary>    
+    
+
+~~~json
+
+{
+    "_id": "5fea238b11d4840017e097a4",
+    "uuid": "d468a388-820a-4985-8561-47c24d70f15b",
+    "executionId": "5fea21be62a7dd00174ca0cb",
+    "monitoringId": "5fea238b58eafd001e5d39d0",
+    "type": "",
+    "isSuccess": true,
+    "startTime": "2020-12-28T18:19:40.355Z",
+    "endTime": "2020-12-28T18:19:41.911Z",
+    "errorOnSendEmail": {},
+    "errorOnSendWebhook": {},
+    "errorOnSendWebsocket": {},
+    "errorOnSendTelegram": {},
+    "createdAt": "2020-12-28T18:19:40.275Z",
+    "updatedAt": "2020-12-28T18:19:42.564Z",
+        
+}
+        
+~~~
+
+</details> 
+
+
+
+<details>
+    <summary><b>Atributos</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+atributo             | descrição
+
+</details> 
+
+------
+
+## <b>Cadastrar monitoramento </b> 
 Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
 
 ```
 POST    /monitoring     Content-Type: application/json
 ```
 
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
 ~~~json
+Request:
 {
-    "url": "http://google.com"
+    "url": "http://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "[document.querySelector('body').innerText]",
+    "notifications": [{
+        "level": 0,
+        "template": "Hi My name is John - Email Notification",
+        "email": ["john@email.com"]		
+    }]
+}
+
+
+Response:
+{
+    "scriptContent": [],
+    "_id": "5fea28e358eafd001e5d39d2",
+    "url": "http://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "[document.querySelector('body').innerText]",
+    "notifications": [{
+        "level": 0,
+        "template": "Hi My name is John - Email Notification",
+        "email": ["john@email.com"]
+    }],
+    "createdAt": "2020-12-28T18:50:11.372Z",
+    "updatedAt": "2020-12-28T18:50:11.372Z"
 }
 ~~~
-
-<details>
-    <summary><b>Atributos da requisição</b></summary>    
-    
-Atributo | Descrição
-:--------- | :-------
-url             | Endereço da página a ser monitorada
-scriptTarget    | Código Javascript para extrair a informação alvo da página
-
-
 </details> 
 
 <details>
-    <summary><b>Exemplo de requisição - Simples</b></summary>    
+    <summary><b>Exemplo de requisição 2</b></summary>    
 
 ~~~json
 Request:
@@ -137,32 +460,12 @@ Request:
 
 Response:
 {
-    "extractedTarget": "asasdasd",
-    "isSuccess": true,
-    "uuid": "5486acab-2491-4749-a072-9e96ca06a267",
-    "executionTime": "1535ms",
-    "extractedContent": []
-}
-~~~
-</details> 
-
-<details>
-    <summary><b>Exemplo de requisição - Completo</b></summary>    
-
-~~~json
-Request:
-{
-    "url": "http://google.com"
-}
-
-
-Response:
-{
-    "extractedTarget": "asasdasd",
-    "isSuccess": true,
-    "uuid": "5486acab-2491-4749-a072-9e96ca06a267",
-    "executionTime": "1535ms",
-    "extractedContent": []
+    "scriptContent": [],
+    "_id": "5fea290f58eafd001e5d39d3",
+    "url": "http://google.com",
+    "notifications": [],
+    "createdAt": "2020-12-28T18:50:55.597Z",
+    "updatedAt": "2020-12-28T18:50:55.597Z"
 }
 ~~~
 </details> 
@@ -174,11 +477,16 @@ Response:
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify(
-    {
-        "url":"http://google.com",
-        "scriptTarget":"[...document.querySelectorAll('a')].map(e => e.href)"
-    });
+var raw = JSON.stringify({
+    "url": "http://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "[document.querySelector('body').innerText]",
+    "notifications": [{
+        "level": 0,
+        "template": "Hi My name is John - Email Notification",
+        "email": ["john@email.com"]		
+    }]
+});
 
 var requestOptions = {
   method: 'POST',
@@ -187,7 +495,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync", requestOptions)
+fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -199,7 +507,7 @@ fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync",
 
 
 ------
-## <b>________ </b> 
+
 Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
 
 ```
