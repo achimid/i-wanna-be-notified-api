@@ -106,6 +106,16 @@ POST    /monitoring     Content-Type: application/json
 }
 ~~~
 
+<details>
+    <summary><b>Atributos da requisição</b></summary>    
+    
+Atributo | Descrição
+:--------- | :-------
+url             | Endereço da página a ser monitorada
+scriptTarget    | Código Javascript para extrair a informação alvo da página
+
+
+</details> 
 
 <details>
     <summary><b>Exemplo de requisição - Simples</b></summary>    
@@ -150,7 +160,7 @@ Response:
 </details> 
 
 <details>
-    <summary><b>Exemplo de requisição - Código Javascript</b></summary>    
+    <summary><b>Exemplo de código - Javascript</b></summary>    
 
 ~~~javascript
 var myHeaders = new Headers();
