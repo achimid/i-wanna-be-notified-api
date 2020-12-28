@@ -267,48 +267,48 @@ atributo             | descrição
 
 ~~~json
 {
-        "_id": "5fea21be62a7dd00174ca0cb",
-        "filter": {
-            "words": [
-                "apple",
-                "google"
-            ]
-        },
-        "scriptContent": [
-            "Some Javascript code, example: [document.querySelector('body').innerText]"
-        ],
-        "extractedContent": ["[No Content]"],
-        "uuid": "d468a388-820a-4985-8561-47c24d70f15b",
-        "url": "http://google.com",
-        "scriptTarget": "[...document.querySelectorAll('a')].map(e => e.href)",
-        "createdAt": "2020-12-28T18:19:40.275Z",
-        "updatedAt": "2020-12-28T18:19:42.564Z",
-        "monitoringId": "5fea21bc58eafd001e5d39ce",
-        "startTime": "2020-12-28T18:19:40.355Z",
-        "level": 0,
-        "options": {
-            "timeout": 30000,
-            "waitUntil": "networkidle0",
-            "printscreen": false,
-            "printscreenFullPage": false
-        },
-        "extractedTarget": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"... ",
-        "endTime": "2020-12-28T18:19:41.911Z",
-        "executionTime": "1556ms",
-        "extractedTargetNormalized": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"...",
-        "isSuccess": true,
-        "hashTarget": "2d3a256612beba0c9052e39067ed9cdd",
-        "hashTargetChanged": false,
-        "hashTargetUnique": true,
-        "isLast": true,
-        "errorOnExecuteScriptTarget": { },
-        "errorOnPrintPage": { },
-        "errorOnUploadPrintscreen": { },
-        "errorOnRemovePrintscreen": { },
-        "errorOnExecuteScriptTarget": { },
-        "errorOnExecuteScriptTarget": { },
-        "errorOnAddUserAgent": { }
-    }
+    "_id": "5fea21be62a7dd00174ca0cb",
+    "filter": {
+        "words": [
+            "apple",
+            "google"
+        ]
+    },
+    "scriptContent": [
+        "Some Javascript code, example: [document.querySelector('body').innerText]"
+    ],
+    "extractedContent": ["[No Content]"],
+    "uuid": "d468a388-820a-4985-8561-47c24d70f15b",
+    "url": "http://google.com",
+    "scriptTarget": "[...document.querySelectorAll('a')].map(e => e.href)",
+    "createdAt": "2020-12-28T18:19:40.275Z",
+    "updatedAt": "2020-12-28T18:19:42.564Z",
+    "monitoringId": "5fea21bc58eafd001e5d39ce",
+    "startTime": "2020-12-28T18:19:40.355Z",
+    "level": 0,
+    "options": {
+        "timeout": 30000,
+        "waitUntil": "networkidle0",
+        "printscreen": false,
+        "printscreenFullPage": false
+    },
+    "extractedTarget": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"... ",
+    "endTime": "2020-12-28T18:19:41.911Z",
+    "executionTime": "1556ms",
+    "extractedTargetNormalized": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\" itemscope=\"\" itemtype=\"http://schema.org/WebPage\" lang=\"en\"><head><meta charset=\"UTF-8\"...",
+    "isSuccess": true,
+    "hashTarget": "2d3a256612beba0c9052e39067ed9cdd",
+    "hashTargetChanged": false,
+    "hashTargetUnique": true,
+    "isLast": true,
+    "errorOnExecuteScriptTarget": { },
+    "errorOnPrintPage": { },
+    "errorOnUploadPrintscreen": { },
+    "errorOnRemovePrintscreen": { },
+    "errorOnExecuteScriptTarget": { },
+    "errorOnExecuteScriptTarget": { },
+    "errorOnAddUserAgent": { }
+}
 ~~~
 
 </details> 
@@ -502,9 +502,128 @@ fetch("https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring", requ
 ~~~
 </details> 
 
+--------------
 
+## <b>Editar monitoramento </b> 
+Este endpoint deve ser utilizado para editar as informações de um monitoramento.
+
+```
+PUT     /monitoring/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
 
 --------------
+
+## <b>Listar monitoramento </b> 
+Este endpoint deve ser utilizado para listar os monitoramento, sendo possivel filtrar por parametros na query.
+
+```
+GET     /monitoring     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Buscar monitoramento</b> 
+Este endpoint deve ser utilizado para buscar um monitoramento utilizando o id.
+
+```
+GET     /monitoring/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
+## <b>Remover monitoramento por Id </b> 
+Este endpoint deve ser utilizado para excluir um monitoramento utilizando do o id.
+
+```
+DELETE     /monitoring/:id     Content-Type: application/json
+```
+
+<details>
+    <summary><b>Exemplo de requisição 1</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de requisição 2</b></summary>    
+
+~~~json
+~~~
+</details> 
+
+<details>
+    <summary><b>Exemplo de código - Javascript</b></summary>    
+
+~~~javascript
+~~~
+</details> 
+
+--------------
+
 
 ## Documentação Swagger
 
