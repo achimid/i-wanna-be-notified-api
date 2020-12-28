@@ -105,7 +105,7 @@ GET     /notification/:id
 
 ## Schema: montoring
 
-<details>
+<details open>
     <summary><b>Request</b></summary>    
     
 
@@ -261,7 +261,7 @@ atributo             | descrição
 ## Schema: execution
 
 
-<details>
+<details open>
     <summary><b>Response</b></summary>    
     
 
@@ -330,7 +330,7 @@ atributo             | descrição
 ## Schema: log
 
 
-<details>
+<details open>
     <summary><b>Response</b></summary>    
     
 
@@ -365,7 +365,7 @@ atributo             | descrição
 ## Schema: notification
 
 
-<details>
+<details open>
     <summary><b>Response</b></summary>    
     
 
@@ -413,7 +413,7 @@ Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina 
 POST    /monitoring     Content-Type: application/json
 ```
 
-<details>
+<details open>
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
