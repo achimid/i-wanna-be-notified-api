@@ -38,7 +38,7 @@ Possíveis canais para receber a notificação:
 
 <p align="justify">
     Com o serviço do <a href="http://iwannabenotified.ddns.net/">IWannaBeNotified</a> também é possivel extrair informações da página web por meio de uma técnica chamada <a href="https://pt.wikipedia.org/wiki/Coleta_de_dados_web">Web Scraping</a>.
-    Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de Javascript ou JQuery. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
+    Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a> ou <a href="https://jquery.com/">JQuery</a>. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
 </p>
 
 
@@ -57,11 +57,11 @@ http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ## Contextualização
  
 <p align="justify">
-    A API permite que você cadastre intenções de monitoramento, na documentação é chamado de monitoramento (<code>/monitoring</code>). O monitoramento determina alguns parametros de execução, como por exemplo, a periodicidade, o alvo (endereço do site), quais os scripts que serão executados e como será efetuada a notificação após a extração das informações.
+    A API permite que você cadastre intenções de monitoramento, na documentação é chamado de <a href="#schema-monitoring">monitoramento</a> (<code>/monitoring</code>). O monitoramento determina alguns parametros de execução, como por exemplo, a periodicidade, o alvo (endereço do site), quais os scripts que serão executados e como será efetuada a notificação após a extração das informações.
 </p>
 
 <p align="justify">
-    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma execução (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site informado, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma <a href="#schema-monitoring">execução</a> (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
 </p>
  
 <!-- Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar todos os monitoramentos cadastrados, mas também é possível criar um monitoramento anônimo. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação.  -->
