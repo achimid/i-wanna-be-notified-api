@@ -50,6 +50,7 @@ Endereço da API:
 http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ```
 
+
 ```diff
 - Até o momento a utilização do serviço é grátis e sem limites. Então seja justo e não abuse.
 ```
@@ -890,6 +891,11 @@ GET     /notification/sync/full     Content-Type: application/json
 </details> 
 
 --------------
+
+
+
+### Link para documentação no Postman: [[Postman Documentation]](https://documenter.getpostman.com/view/11024266/TVt17ijV)
+
 
 ## Exemplos de integrações
 
