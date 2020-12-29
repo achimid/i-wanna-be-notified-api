@@ -818,7 +818,7 @@ GET     /notification/:id     Content-Type: application/json
 
 
 ## <b>Monitoramento Síncrono Temporário - Scraper - Básico</b> 
-Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
+Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
 
 Este endpoint retorna apenas algumas informações da execução, para mais informações veja os exemplos.
 
@@ -855,7 +855,7 @@ GET     /notification/sync     Content-Type: application/json
 --------------
 
 ## <b>Monitoramento Síncrono Temporário - Scraper - Completo</b> 
-Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
+Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
 
 Este endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.
 
@@ -945,3 +945,7 @@ Algumas Idéias e Exemplos de utilização:
 * Criar uma aplicação onde é possível cadastrar o valor desejado de um papel do mercado de ações e quando o papel atingir determinado valor, receber um aviso, executar uma compra/venda ou até mesmo um comando desejado
 * Criar um sistema que sempre que lançar os animes que você assiste em um site de sua escolha, efetuar o download do anime automaticamente
 * Criar um sistema para monitorar quando o resultado de um concurso for publicado
+
+[] teste
+[] teste
+[] teste
