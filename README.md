@@ -8,7 +8,7 @@
 </p>
 
 <p align="justify">
-    O serviço é customizável a ponto de configurar: quais informações você deseja monitorar dentro do site, o template que você deseja receber a notificação e até mesmo os canais que você deseja ser notificado.
+    O serviço é customizável a ponto de configurar quais informações você deseja monitorar dentro do site, o template que você deseja receber a notificação e até mesmo os canais que você deseja ser notificado.
 </p>
 
 Possíveis canais para receber a notificação:
@@ -27,17 +27,17 @@ Possíveis canais para receber a notificação:
 ## Como posso utilizar o NotifyMe?
 
 <p align="justify">
-    O serviço permite que você monitore o conteúdo de uma página web apenas informando o endereço da página, assim que o serviço identificar uma mudança de conteúdo, você será notificado. Esse tipo de ação deve sempre ser realizada com muito cuidade, normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso, por exemplo, páginas com propagandas e datas de acesso.
+    O serviço permite que você monitore o conteúdo de uma página web apenas informando o endereço da página, assim que o serviço identificar uma mudança de conteúdo, você será notificado. Esse tipo de ação deve sempre ser realizada com muito cuidado, normalmente as páginas da web mudam com muita frequência, algumas delas, chegam a ser diferente a cada acesso, por exemplo, páginas com propagandas e datas de acesso.
 </p>
 
 <p align="justify">
-    A verificação do site é feita de uma forma cíclica, ou seja, de tempos em tempos o serviço acesse o site desejado para monitorar o conteúdo, é possível configurar este tempo de verificação. Assim, você irá receber a notificação o mais rapido possivel, respeitando cada ciclo, dependendo do seu propósito é possivel configurar esse tempo de execução. Também é possível configurar o monitoramento para que você receba apenas conteúdos quando forem diferentes do conteúdo encontrado anteriormente ou até mesmo conteúdos únicos.
+    A verificação do site é feita de uma forma cíclica, ou seja, de tempos em tempos o serviço acessa o site desejado para monitorar o conteúdo, é possível configurar este tempo de verificação. Assim, você irá receber a notificação o mais rapido possível, respeitando cada ciclo, dependendo do seu propósito é possível configurar esse tempo de execução. Também é possível configurar o monitoramento para que você receba apenas conteúdos quando forem diferentes do conteúdo encontrado anteriormente ou até mesmo conteúdos únicos.
 </p>
 
 ## Extração de informações - [[Web Scraping](https://pt.wikipedia.org/wiki/Coleta_de_dados_web)]
 
 <p align="justify">
-    Com o serviço do <a href="http://iwannabenotified.ddns.net/">IWannaBeNotified</a> também é possivel extrair informações da página web por meio de uma técnica chamada <a href="https://pt.wikipedia.org/wiki/Coleta_de_dados_web">Web Scraping</a>.
+    Com o serviço do <a href="http://iwannabenotified.ddns.net/">IWannaBeNotified</a> também é possível extrair informações da página web por meio de uma técnica chamada <a href="https://pt.wikipedia.org/wiki/Coleta_de_dados_web">Web Scraping</a>.
     Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a> ou <a href="https://jquery.com/">JQuery</a>. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
 </p>
 
@@ -57,11 +57,11 @@ http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ## Contextualização
  
 <p align="justify">
-    A API permite que você cadastre intenções de monitoramento, na documentação é chamado de <a href="#schema-monitoring">monitoramento</a> (<code>/monitoring</code>). O monitoramento determina alguns parametros de execução, como por exemplo, a periodicidade, o alvo (endereço do site), quais os scripts que serão executados e como será efetuada a notificação após a extração das informações.
+    A API permite que você cadastre intenções de monitoramento, na documentação é chamado de <a href="#schema-monitoring">monitoramento</a> (<code>/monitoring</code>). O monitoramento determina alguns parâmetros de execução, como por exemplo, a periodicidade, o alvo (endereço do site), quais os scripts que serão executados e como será efetuada a notificação após a extração das informações.
 </p>
 
 <p align="justify">
-    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma <a href="#schema-execution">execução</a> (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possivel que um monitoramento tenha diversas execuções.
+    Após cadastrar a intenção de monitoramento (monitoring), quando chegar a hora de executar, será criado uma <a href="#schema-execution">execução</a> (<code>/execution</code>), essa execution é a operação de fato, ou seja, a aplicação irá acessar o site, executar os scripts informados, obter o conteúdo da pagina, se necessário irá interpretar o conteudo extraido criando novas execuções. No futuro essa execution será utilizada para efetuar os disparos das notificações. É possível que um monitoramento tenha diversas execuções.
 </p>
  
 <!-- Existe a possibilidade de criar um usuário na aplicação, para que o usuário possa gerenciar todos os monitoramentos cadastrados, mas também é possível criar um monitoramento anônimo. Para identificação do usuário é necessário informar no header `Authentication` o Token JWT fornecido no momento da autenticação.  -->
@@ -70,11 +70,11 @@ http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 
 
 <p align="justify">
-    As operações são realizadas de uma forma assincrona, onde um monitoramento é cadastrado e de tempos em tempos ele irá criar uma execução e acessar a pagina e extrair as informações, assim que cada execução é finalizada, será enviado uma notificação conforme cadastrado no monitoramento. 
+    As operações são realizadas de uma forma assíncrona, onde um monitoramento é cadastrado e de tempos em tempos ele irá criar uma execução e acessar a pagina e extrair as informações, assim que cada execução é finalizada, será enviado uma notificação conforme cadastrado no monitoramento. 
 </p>
 
 <p align="justify">
-    Dito isso, é possivel utilizar um endpoint para tornar o processo sincrono e esperar as execuções terminarem, mas é valido ressaltar que o endpoint tem um <b>timeout request</b> de <b>30 segundos</b> e o endpoint em questão <code>(/monitoring/sync)</code> não é performático.
+    Dito isso, é possível utilizar um endpoint para tornar o processo síncrono e esperar as execuções terminarem, mas é valido ressaltar que o endpoint tem um <b>timeout request</b> de <b>30 segundos</b> e o endpoint em questão <code>(/monitoring/sync)</code> não é performático.
 </p>
 
  
@@ -410,13 +410,13 @@ atributo             | descrição
 ------
 
 ## <b>Cadastrar monitoramento </b> 
-Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações especificas.
+Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações específicas.
 
 ```
 POST    /monitoring     Content-Type: application/json
 ```
 
-<details open>
+<details>
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
@@ -538,7 +538,7 @@ PUT     /monitoring/:id     Content-Type: application/json
 --------------
 
 ## <b>Listar monitoramentos </b> 
-Este endpoint deve ser utilizado para listar os monitoramento, sendo possivel filtrar por parametros na query.
+Este endpoint deve ser utilizado para listar os monitoramento, sendo possível filtrar por parâmetros na query.
 
 ```
 GET     /monitoring     Content-Type: application/json
@@ -635,7 +635,7 @@ DELETE     /monitoring/:id     Content-Type: application/json
 
 
 ## <b>Listar execuções </b> 
-Este endpoint deve ser utilizado para listar as execuções, sendo possivel filtrar por parametros na query.
+Este endpoint deve ser utilizado para listar as execuções, sendo possível filtrar por parâmetros na query.
 
 ```
 GET     /execution     Content-Type: application/json
@@ -696,7 +696,7 @@ GET     /execution/:id     Content-Type: application/json
 
 
 ## <b>Listar logs </b> 
-Este endpoint deve ser utilizado para listar os logs gerados durante a execução do monitoramento, sendo possivel filtrar por parametros na query.
+Este endpoint deve ser utilizado para listar os logs gerados durante a execução do monitoramento, sendo possível filtrar por parâmetros na query.
 
 ```
 GET     /log     Content-Type: application/json
@@ -757,7 +757,7 @@ GET     /log/:id     Content-Type: application/json
 
 
 ## <b>Listar notificações </b> 
-Este endpoint deve ser utilizado para listar as notificações disparadas, sendo possivel filtrar por parametros na query.
+Este endpoint deve ser utilizado para listar as notificações disparadas, sendo possível filtrar por parâmetros na query.
 
 ```
 GET     /notification     Content-Type: application/json
@@ -817,10 +817,10 @@ GET     /notification/:id     Content-Type: application/json
 --------------
 
 
-## <b>Monitoramento Sincrono Temporário - Scraper - Basico</b> 
+## <b>Monitoramento Síncrono Temporário - Scraper - Básico</b> 
 Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
 
-Este endpoint estorna apenas algumas informações da execução, para mais informações veja os exemplos.
+Este endpoint retorna apenas algumas informações da execução, para mais informações veja os exemplos.
 
 * **Este endpoint possui uma limitação de performance.**
 * **Este endpoint possui uma limitação de timeout (30s) para a requisição**.
@@ -854,7 +854,7 @@ GET     /notification/sync     Content-Type: application/json
 
 --------------
 
-## <b>Monitoramento Sincrono Temporário - Scraper - Completo</b> 
+## <b>Monitoramento Síncrono Temporário - Scraper - Completo</b> 
 Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meior desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.
 
 Este endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.
