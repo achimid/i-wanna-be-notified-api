@@ -1,0 +1,529 @@
+{
+	"info": {
+		"_postman_id": "6c923f23-fe3c-4c88-9505-ab19d85da1c6",
+		"name": "i-wanna-be-notified-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "Recuperar Log",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/log/5fea70dc7b1e2f0017de68c4",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"log",
+								"5fea70dc7b1e2f0017de68c4"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para buscar um log utilizando o id."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Este endpoint deve ser utilizado para listar os logs gerados durante a execução do monitoramento, sendo possível filtrar por parâmetros na query."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Execution",
+			"item": [
+				{
+					"name": "Recuperar Execution",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/execution/5fe9bad53a073e0017197976",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"execution",
+								"5fe9bad53a073e0017197976"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para buscar uma execução utilizando o id."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Execution",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/execution?uuid=57512d45-19ed-48a8-8715-9efb591bfff9&isSuccess=true&level=0&hashTarget=00e9d899e337787102a43cf3ba8dd739&monitoringId=5fe9b2d4494d97001e5d4f33&hashTargetChanged=false&hashTargetUnique=false&url=https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/&isLast=true",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"execution"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "57512d45-19ed-48a8-8715-9efb591bfff9"
+								},
+								{
+									"key": "isSuccess",
+									"value": "true"
+								},
+								{
+									"key": "level",
+									"value": "0"
+								},
+								{
+									"key": "hashTarget",
+									"value": "00e9d899e337787102a43cf3ba8dd739"
+								},
+								{
+									"key": "monitoringId",
+									"value": "5fe9b2d4494d97001e5d4f33"
+								},
+								{
+									"key": "hashTargetChanged",
+									"value": "false"
+								},
+								{
+									"key": "hashTargetUnique",
+									"value": "false"
+								},
+								{
+									"key": "url",
+									"value": "https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/"
+								},
+								{
+									"key": "isLast",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para listar as execuções, sendo possível filtrar por parâmetros na query."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Recuperar Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/notification/5feb61b2879d800017c4c6bb",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification",
+								"5feb61b2879d800017c4c6bb"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para buscar uma notificação utilizando o id."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/notification?startDate=2020-12-01&endDate=2020-12-29&uuid=1cb28187-b092-404f-9d6f-a1f06a834a98&executionId=5fea64377b1e2f0017de6423&monitoringId=5f9dfdbf9165e7001ef5d672&type=webhook&isSuccess=true",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-12-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2020-12-29"
+								},
+								{
+									"key": "uuid",
+									"value": "1cb28187-b092-404f-9d6f-a1f06a834a98"
+								},
+								{
+									"key": "executionId",
+									"value": "5fea64377b1e2f0017de6423"
+								},
+								{
+									"key": "monitoringId",
+									"value": "5f9dfdbf9165e7001ef5d672"
+								},
+								{
+									"key": "type",
+									"value": "webhook"
+								},
+								{
+									"key": "isSuccess",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para listar as notificações disparadas, sendo possível filtrar por parâmetros na query."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Monitoring",
+			"item": [
+				{
+					"name": "Recuperar Monitoring",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5feb6a0f7755ab001e5b3dc7",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring",
+								"5feb6a0f7755ab001e5b3dc7"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para buscar um monitoramento utilizando o id."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Monitoring",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring?name=My Google Website Monitoring&url=http://google.com&regularity=*/15 * * * *",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "My Google Website Monitoring"
+								},
+								{
+									"key": "url",
+									"value": "http://google.com"
+								},
+								{
+									"key": "regularity",
+									"value": "*/15 * * * *"
+								}
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para listar os monitoramento, sendo possível filtrar por parâmetros na query."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Monitoring",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"Some Javascript code, example: [document.querySelector('body').innerText]\",\n    \"scriptContent\": [\"Some Javascript code, example: [document.querySelector('body').innerText]\"],\n    \"filter\": {\n        \"threshold\": 0.7,\n        \"words\": [\"apple\", \"google\"]\n    },\n    \"regularity\": \"*/3 * * * *\",\n    \"disabled\": false,\n    \"options\": {\n        \"timeout\": 30000,\n        \"waitUntil\": \"networkidle0\",\n        \"enableUserAgentRandom\": false,\n        \"useJquery\": false,\n        \"scriptTagUrl\": \"Some Javascript Tag to Inject in the page\",\n        \"waitTime\": 100,\n        \"printscreen\": false,\n        \"printscreenFullPage\": false,\n        \"notifyChange\": false,\n        \"notifyUniqueChange\": false,\n        \"levelMax\": 0,\n        \"proxy\": \"Some Proxy Url\",\n        \"temporary\": true\n    },\n    \"notifications\": [{\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - WebSocket Notification\",\n        \"websocket\": true\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Email Notification\",\n        \"email\": [\"john@email.com\"]\t\t\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Telegram Notification\",\n        \"telegram\": [{                \n            \"bot_token\": \"Telegram Bot Token for integration\",\n            \"chat_id\": \"Telegram Chat Id to send message\"\n        }]\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Webhook Notification\",\n        \"webhook\": [{\n            \"url\": \"https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback\", \n            \"method\": \"POST\"\n        }]\n    }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para cadastrar um novo monitoramento de pagina e suas configurações específicas."
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Monitoring",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"Some Javascript code, example: [document.querySelector('body').innerText]\",\n    \"scriptContent\": [\"Some Javascript code, example: [document.querySelector('body').innerText]\"],\n    \"filter\": {\n        \"threshold\": 0.7,\n        \"words\": [\"apple\", \"google\"]\n    },\n    \"regularity\": \"*/3 * * * *\",\n    \"disabled\": false,\n    \"options\": {\n        \"timeout\": 30000,\n        \"waitUntil\": \"networkidle0\",\n        \"enableUserAgentRandom\": false,\n        \"useJquery\": false,\n        \"scriptTagUrl\": \"Some Javascript Tag to Inject in the page\",\n        \"waitTime\": 100,\n        \"printscreen\": false,\n        \"printscreenFullPage\": false,\n        \"notifyChange\": false,\n        \"notifyUniqueChange\": false,\n        \"levelMax\": 0,\n        \"proxy\": \"Some Proxy Url\",\n        \"temporary\": true\n    },\n    \"notifications\": [{\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - WebSocket Notification\",\n        \"websocket\": true\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Email Notification\",\n        \"email\": [\"john@email.com\"]\t\t\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Telegram Notification\",\n        \"telegram\": [{                \n            \"bot_token\": \"Telegram Bot Token for integration\",\n            \"chat_id\": \"Telegram Chat Id to send message\"\n        }]\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Webhook Notification\",\n        \"webhook\": [{\n            \"url\": \"https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback\", \n            \"method\": \"POST\"\n        }]\n    }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5feb69147755ab001e5b3dc6",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring",
+								"5feb69147755ab001e5b3dc6"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para editar as informações de um monitoramento."
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Monitoring",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5fa04e55adb14c001e2b09ed",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring",
+								"5fa04e55adb14c001e2b09ed"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado para excluir um monitoramento utilizando do o id."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Monitoring Sync",
+			"item": [
+				{
+					"name": "Criar Monitoring Sync Basico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"document.querySelector('a').href\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring",
+								"sync"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.\n\nEste endpoint retorna apenas algumas informações da execução, para mais informações veja os exemplos.\n\n* **Este endpoint possui uma limitação de performance.**\n* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.\n* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.\n* **Esse endpoint trabalha com enfileiramento de recursos**."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Monitoring Sync Completo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"Some Javascript code, example: [document.querySelector('body').innerText]\",\n    \"scriptContent\": [\"Some Javascript code, example: [document.querySelector('body').innerText]\"],\n    \"filter\": {\n        \"threshold\": 0.7,\n        \"words\": [\"apple\", \"google\"]\n    },\n    \"regularity\": \"*/3 * * * *\",\n    \"disabled\": false,\n    \"options\": {\n        \"timeout\": 30000,\n        \"waitUntil\": \"networkidle0\",\n        \"enableUserAgentRandom\": false,\n        \"useJquery\": false,\n        \"scriptTagUrl\": \"Some Javascript Tag to Inject in the page\",\n        \"waitTime\": 100,\n        \"printscreen\": false,\n        \"printscreenFullPage\": false,\n        \"notifyChange\": false,\n        \"notifyUniqueChange\": false,\n        \"levelMax\": 0,\n        \"proxy\": \"Some Proxy Url\",\n        \"temporary\": true\n    },\n    \"notifications\": [{\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - WebSocket Notification\",\n        \"websocket\": true\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Email Notification\",\n        \"email\": [\"john@email.com\"]\t\t\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Telegram Notification\",\n        \"telegram\": [{                \n            \"bot_token\": \"Telegram Bot Token for integration\",\n            \"chat_id\": \"Telegram Chat Id to send message\"\n        }]\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Webhook Notification\",\n        \"webhook\": [{\n            \"url\": \"https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback\", \n            \"method\": \"POST\"\n        }]\n    }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync/full",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"monitoring",
+								"sync",
+								"full"
+							]
+						},
+						"description": "Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.\n\nEste endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.\n\n* **Este endpoint possui uma limitação de performance.**\n* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.\n* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.\n* **Esse endpoint trabalha com enfileiramento de recursos**."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

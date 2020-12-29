@@ -449,6 +449,8 @@ Response:
     "createdAt": "2020-12-28T18:50:11.372Z",
     "updatedAt": "2020-12-28T18:50:11.372Z"
 }
+
+Status Code: 201(CREATED)
 ~~~
 </details> 
 
@@ -462,7 +464,7 @@ Request:
 }
 
 
-Response:
+Response: 
 {
     "scriptContent": [],
     "_id": "5fea290f58eafd001e5d39d3",
@@ -471,6 +473,8 @@ Response:
     "createdAt": "2020-12-28T18:50:55.597Z",
     "updatedAt": "2020-12-28T18:50:55.597Z"
 }
+
+Status Code: 201(CREATED)
 ~~~
 </details> 
 
@@ -519,6 +523,64 @@ PUT     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
+
+{
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "scriptContent": ["Some Javascript code, example: [document.querySelector('body').innerText]"],
+    "filter": {
+        "threshold": 0.7,
+        "words": ["apple", "google"]
+    },
+    "regularity": "*/3 * * * *",
+    "disabled": false,
+    "options": {
+        "timeout": 30000,
+        "waitUntil": "networkidle0",
+        "enableUserAgentRandom": false,
+        "useJquery": false,
+        "scriptTagUrl": "Some Javascript Tag to Inject in the page",
+        "waitTime": 100,
+        "printscreen": false,
+        "printscreenFullPage": false,
+        "notifyChange": false,
+        "notifyUniqueChange": false,
+        "levelMax": 0,
+        "proxy": "Some Proxy Url",
+        "temporary": true
+    },
+    "notifications": [{
+        "level": 0,
+		"template": "Hi My name is John - WebSocket Notification",
+        "websocket": true
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Email Notification",
+        "email": ["john@email.com"]		
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Telegram Notification",
+        "telegram": [{                
+            "bot_token": "Telegram Bot Token for integration",
+            "chat_id": "Telegram Chat Id to send message"
+        }]
+    },
+    {
+        "level": 0,
+		"template": "Hi My name is John - Webhook Notification",
+        "webhook": [{
+            "url": "https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback", 
+            "method": "POST"
+        }]
+    }]
+}
+
+Response:
+Status Code: 200(OK)
+
 ~~~
 </details> 
 
@@ -526,6 +588,24 @@ PUT     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de requisição 2</b></summary>    
 
 ~~~json
+
+Request:
+{
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "scriptContent": ["Some Javascript code, example: [document.querySelector('body').innerText]"],
+    "filter": {
+        "threshold": 0.7,
+        "words": ["apple", "google"]
+    },
+    "regularity": "*/3 * * * *",
+    "disabled": false
+}
+
+Response:
+Status Code: 200(OK)
+
 ~~~
 </details> 
 
@@ -533,6 +613,35 @@ PUT     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de código - Javascript</b></summary>    
 
 ~~~javascript
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "scriptContent": ["Some Javascript code, example: [document.querySelector('body').innerText]"],
+    "filter": {
+        "threshold": 0.7,
+        "words": ["apple", "google"]
+    },
+    "regularity": "*/3 * * * *",
+    "disabled": false
+});
+
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5feb69147755ab001e5b3dc6", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 ~~~
 </details> 
 
@@ -549,20 +658,58 @@ GET     /monitoring     Content-Type: application/json
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
+
+Request:
+http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring?name=My Google Website Monitoring&url=http://google.com&regularity=*/15 * * * *
+
+Response:
+[
+    {
+        "_id": "5feb7f0748e850001ed301a6",
+        "filter": {
+            "words": [
+                "apple",
+                "google"
+            ]
+        },
+        "scriptContent": [
+            "Some Javascript code, example: [document.querySelector('body').innerText]"
+        ],
+        "url": "https://google.com",
+        "name": "My Google Website Monitoring",
+        "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+        "regularity": "*/3 * * * *",
+        "disabled": false,
+        "options": {
+            "temporary": true
+        },
+        "notifications": [],
+        "createdAt": "2020-12-29T19:09:59.555Z",
+        "updatedAt": "2020-12-29T19:09:59.555Z"
+    }
+]
+
+Status Code: 200(OK)
+
 ~~~
 </details> 
 
-<details>
-    <summary><b>Exemplo de requisição 2</b></summary>    
-
-~~~json
-~~~
-</details> 
 
 <details>
     <summary><b>Exemplo de código - Javascript</b></summary>    
 
 ~~~javascript
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring?name=My Google Website Monitoring&url=http://google.com&regularity=*/15 * * * *", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 ~~~
 </details> 
 
@@ -579,13 +726,37 @@ GET     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
-~~~
-</details> 
 
-<details>
-    <summary><b>Exemplo de requisição 2</b></summary>    
+Request:
+http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5feb6a0f7755ab001e5b3dc7
 
-~~~json
+Response:
+{
+    "_id": "5feb7f0748e850001ed301a6",
+    "filter": {
+        "words": [
+            "apple",
+            "google"
+        ]
+    },
+    "scriptContent": [
+        "Some Javascript code, example: [document.querySelector('body').innerText]"
+    ],
+    "url": "https://google.com",
+    "name": "My Google Website Monitoring",
+    "scriptTarget": "Some Javascript code, example: [document.querySelector('body').innerText]",
+    "regularity": "*/3 * * * *",
+    "disabled": false,
+    "options": {
+        "temporary": true
+    },
+    "notifications": [],
+    "createdAt": "2020-12-29T19:09:59.555Z",
+    "updatedAt": "2020-12-29T19:09:59.555Z"
+}
+
+Status Code: 200(OK)
+
 ~~~
 </details> 
 
@@ -593,7 +764,19 @@ GET     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de código - Javascript</b></summary>    
 
 ~~~javascript
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5feb6a0f7755ab001e5b3dc7", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 ~~~
+
 </details> 
 
 --------------
@@ -609,13 +792,13 @@ DELETE     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de requisição 1</b></summary>    
 
 ~~~json
-~~~
-</details> 
 
-<details>
-    <summary><b>Exemplo de requisição 2</b></summary>    
+Request:
+http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5fa04e55adb14c001e2b09ed
 
-~~~json
+Response:
+Status Code: 200(OK)
+
 ~~~
 </details> 
 
@@ -623,6 +806,17 @@ DELETE     /monitoring/:id     Content-Type: application/json
     <summary><b>Exemplo de código - Javascript</b></summary>    
 
 ~~~javascript
+
+var requestOptions = {
+  method: 'DELETE',
+  redirect: 'follow'
+};
+
+fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/5fa04e55adb14c001e2b09ed", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 ~~~
 </details> 
 
