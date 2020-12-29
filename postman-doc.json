@@ -38,7 +38,36 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/log?startDate=2020-12-01&endDate=2020-12-29&uuid=08a50adc-7413-4ce8-a0c0-93ef7c9bd15c&type=text",
+							"protocol": "http",
+							"host": [
+								"i-wanna-be-notified-api-01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"log"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-12-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2020-12-29"
+								},
+								{
+									"key": "uuid",
+									"value": "08a50adc-7413-4ce8-a0c0-93ef7c9bd15c"
+								},
+								{
+									"key": "type",
+									"value": "text"
+								}
+							]
 						},
 						"description": "Este endpoint deve ser utilizado para listar os logs gerados durante a execução do monitoramento, sendo possível filtrar por parâmetros na query."
 					},
