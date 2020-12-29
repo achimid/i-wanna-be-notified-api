@@ -5,8 +5,8 @@ const ExecutionModel = require('./execution-model')
 const limit = parseInt(process.env.DEFAULT_ENDPOINT_LIST_LIMIT)
 
 const findByFilter = (filter) => {
-    const { uuid, url, isSuccess, level, hashTarget, monitoringId, hashTargetChanged, hashTargetUnique  } =  filter
-    filter = clearObj({ uuid, url, isSuccess, level, hashTarget, monitoringId, hashTargetChanged, hashTargetUnique })
+    const { uuid, url, isSuccess, level, hashTarget, monitoringId, hashTargetChanged, hashTargetUnique, isLast } =  filter
+    filter = clearObj({ uuid, url, isSuccess, level, hashTarget, monitoringId, hashTargetChanged, hashTargetUnique, isLast })
 
     return ExecutionModel.many(Model => Model
         .find(filter)
