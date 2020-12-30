@@ -1255,9 +1255,10 @@ Este endpoint deve ser utilizado como teste para o cadastro de notificação. To
 Este endpoint retorna apenas algumas informações da execução, para mais informações veja os exemplos.
 
 * **Este endpoint possui uma limitação de performance.**
-* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.
-* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.
+* **Este endpoint possui uma limitação de timeout (30s) para a requisição, devido a platafrma PaaS (Heroku)**.
 * **Esse endpoint trabalha com enfileiramento de recursos**.
+* **Este endpoint utiliza um cache de 2 minutos**
+
 
 ```
 GET     /notification/sync     Content-Type: application/json
@@ -1372,9 +1373,9 @@ Este endpoint deve ser utilizado como teste para o cadastro de notificação. To
 Este endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.
 
 * **Este endpoint possui uma limitação de performance.**
-* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.
-* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.
+* **Este endpoint possui uma limitação de timeout (30s) para a requisição, devido a platafrma PaaS (Heroku)**.
 * **Esse endpoint trabalha com enfileiramento de recursos**.
+* **Este endpoint utiliza um cache de 2 minutos**
 
 ```
 GET     /notification/sync/full     Content-Type: application/json
