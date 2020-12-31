@@ -27,6 +27,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http-status-codes": "^1.4.0",
+    "joi": "^17.3.0",
     "mongoose": "^5.9.25",
     "newrelic": "^7.0.2",
     "node-cron": "^2.0.3",

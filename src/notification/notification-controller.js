@@ -1,18 +1,22 @@
 const router = require('express').Router()
 const { OK } = require('http-status-codes')
+
 const service = require('./notification-service')
+const { validatePathId } = require('../utils/validator')
 
 
 router.get('/', (req, res) => {
-    console.log('Find notification by filter')
+    console.log('Find notifications by filter')
     return service.findByFilter(req.query)
-        .then(logs => res.status(OK).send(logs))
+        .then(notifications => res.status(OK).send({ notifications }))
+        .catch(res.onError)
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validatePathId, (req, res) => {
     console.log('Find notification by id')
     return service.findById(req.params.id)
-        .then(log => res.status(OK).send(log))
+        .then(notification => res.status(OK).send(notification))
+        .catch(res.onError)
 })
 
 
