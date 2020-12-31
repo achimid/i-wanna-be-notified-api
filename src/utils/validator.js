@@ -5,7 +5,7 @@ const validate =  (res, next, schema, value) => {
     const { error } = schema.validate(value)
     if (!error) return next()
     
-    res.status(BAD_REQUEST).send({ error: error.details.map(d => d.message) })    
+    res.status(BAD_REQUEST).json({ error: error.details.map(d => d.message) })    
     throw JSON.stringify({statusCode: BAD_REQUEST, message: error.details.map(d => d.message)})
 }
 

@@ -1,15 +1,18 @@
 const router = require('express').Router()
 const { OK } = require('http-status-codes')
+
 const service = require('./monitoring-service')
+const validator = require('./monitoring-validator')
 const cache = require('./monitoring-cache-middleware')
 
 const { API_URL, API_VERSION, API_PREFIX } =  process.env
 
 
-router.post('/', cache.cacheRequest(false), async (req, res) => {
-    setCustomParams(req.body, false)
+router.post('/', validator.post, cache.cacheRequest(false), (req, res) => {
+    return setCustomParams(req.body, false)
         .then(service.createTemporary)
         .then(cache.processRequestCreation(req, res))
+        .catch(res.onError)
 })
 
 router.patch('/', async (req, res) => {
@@ -20,10 +23,11 @@ router.patch('/', async (req, res) => {
 
 
 
-router.post('/full', cache.cacheRequest(true), async (req, res) => {
-    setCustomParams(req.body, true)
+router.post('/full', validator.post, cache.cacheRequest(true), (req, res) => {
+    return setCustomParams(req.body, true)
         .then(service.createTemporary)
         .then(cache.processRequestCreation(req, res))
+        .catch(res.onError)
 })
 
 router.patch('/full', async (req, res) => {
