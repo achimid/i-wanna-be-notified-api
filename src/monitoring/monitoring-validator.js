@@ -58,9 +58,9 @@ const monitoringSchema = Joi.object({
 
 const validatePost = (req, res, next) => Utils.validate(res, next, monitoringSchema, req.body)
 
-const validateGet = (req, res, next) => Utils.validatePathId(req, res, next)
+const validateId = (req, res, next) => Utils.validatePathId(req, res, next)
 
 module.exports = {
-    get: validateGet,
+    id: validateId,
     post: validatePost
 }

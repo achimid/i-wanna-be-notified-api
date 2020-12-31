@@ -8,9 +8,6 @@ Extrair as estruturas e criar modelos proprios para as notificações e filter q
 
 Sempre que eu colocar uma notificação, a primeira execuão sempre será notificada, fazer alguma coisa para que pareça um teste.
 
-Adicionar validação nos endpoints.
-Tratar o status code de response quando não encontra o id, lançar uma exception e status code correto.
-Extrair a parte de cache do endpoint para outro arquivo: cache-middleware
 
 Algumas ideias para a criação do front-end:
     Um cabeçalho bem grande com o nome do site "I Wanna Be Notified" e abaixo desse cabeçalho varias opções:

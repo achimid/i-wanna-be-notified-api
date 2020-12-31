@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         .catch(res.onError)
 })
 
-router.get('/:id', validator.get, (req, res) => {
+router.get('/:id', validator.id, (req, res) => {
     console.log('Find monitoring by id')
     return service.findById(req.params.id)
         .then(monitoring => res.status(OK).send(monitoring))
@@ -25,14 +25,14 @@ router.post('/', validator.post, (req, res) => {
         .catch(res.onError)
 })
 
-router.put('/:id', validator.get, validator.post, (req, res) => {
+router.put('/:id', validator.id, validator.post, (req, res) => {
     console.log('Update monitoring')
     service.update(req.params.id, req.body)
         .then(() => res.status(OK).send())
         .catch(() => res.send())
 })
 
-router.delete('/:id', validator.get, (req, res) => {
+router.delete('/:id', validator.id, (req, res) => {
     console.log('Delete monitoring by id')
     return service.remove(req.params.id)
         .then(() => res.status(OK).send())
