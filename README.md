@@ -1,5 +1,4 @@
-# [IWannaBeNotified](http://iwannabenotified.ddns.net/)
-
+# [IWannaBeNotified](http://iwannabenotified.ddns.net/) 
 
 ## O que é o IWannaBeNotified?
 
@@ -41,6 +40,21 @@ Possíveis canais para receber a notificação:
     Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a> ou <a href="https://jquery.com/">JQuery</a>. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
 </p>
 
+
+# Como contribuir com o projeto?
+* Você pode enviar sugestões e ideias.
+* Você pode abrir um PR com alterações.
+* Você pode falar do projeto para um amigo.
+* Você pode divulgar o projeto em suas redes sociais.
+* Você pode realizar uma doação utilizando o botão abaixo:
+<div align="center">
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+    <input type="hidden" name="hosted_button_id" value="36KAJHCWGX5HJ" />
+    <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+
+</div>
 
 
 # API
