@@ -20,7 +20,8 @@ const optionsSchema =       Joi.object().keys({
     notifyUniqueChange:     Joi.optional(),
     levelMax:               Joi.number(),
     proxy:                  Joi.string(),
-    temporary:              Joi.optional() 
+    temporary:              Joi.optional(),
+    filterDomain:           Joi.optional()
 })
 
 const notificationSchema = Joi.object().keys({
@@ -48,8 +49,10 @@ const monitoringSchema = Joi.object({
     name:                   Joi.string(),
     scriptTarget:           Joi.string(),
     scriptContent:          Joi.array().items(Joi.string().optional()),
+    scriptNavigate:         Joi.string(),
     regularity:             Joi.string(),
     disabled:               Joi.optional(),
+    mode:                   Joi.string().valid('crawler', 'scraper'),
     filter:                 filterSchema,
     options:                optionsSchema,
     notifications:          Joi.array().items(notificationSchema)

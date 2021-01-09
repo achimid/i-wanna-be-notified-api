@@ -29,4 +29,5 @@ Algumas ideias para a criação do front-end:
 
 Melhorar performance dos assets do frontend, adicionando em um CDN ou algo do tipo.
 
+Backoffice para monitorar o sucesso das execuções e dos monitoramentos. Tentar utilizar o newRealic
     
