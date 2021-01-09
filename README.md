@@ -56,10 +56,17 @@ Possíveis canais para receber a notificação:
 
 # API
 
-Endereço da API:
+Endereço da [API](http://i-wanna-be-notified-api-01.herokuapp.com/api/v1):
 ```
 http://i-wanna-be-notified-api-01.herokuapp.com/api/v1
 ```
+
+
+Endereço da [Documentação Postman](https://documenter.getpostman.com/view/11024266/TVt17ijV):
+```
+https://documenter.getpostman.com/view/11024266/TVt17ijV
+```
+
 
 
 ```diff
@@ -1652,23 +1659,33 @@ fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync/fu
 
 
 
-### Link para documentação no Postman: [[Postman Documentation]](https://documenter.getpostman.com/view/11024266/TVt17ijV)
-
-
 ## Exemplos de integrações
 
-// TODO: Colocar alguns exemplos de integrações com o webSockets, webhooks e telegramChat.
+(Em desenvolvimento)
+<!-- // TODO: Colocar alguns exemplos de integrações com o webSockets, webhooks e telegramChat. -->
 
 ## Funcionamento
 
-// TODO: Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário
+(Em desenvolvimento)
+
+<!-- // TODO: Explicar a utilização do puppeteer, dos workers, do fallback da api, das options, sobre o filtro de similaridade, sobre a linguagem do projeto.... Sobre as integrações, sobre o usuário -->
 
 
 ## Arquitetura
 
-// TODO: Explicar sobre a arquitetura das aplicações, a comunicação entre elas, os processos asyncronos, o pool de workers.
+Este projeto é dividido em diversos micro-serviço, acesse outros repositório do projeto:
 
-## Outros
+* [i-wanna-be-notified-api](https://github.com/achimid/i-wanna-be-notified-api)
+* [i-wanna-be-notified-front](https://github.com/achimid/i-wanna-be-notified-front)
+* [i-wanna-be-notified-worker](https://github.com/achimid/i-wanna-be-notified-worker)
+* [i-wanna-be-notified-scheduler](https://github.com/achimid/i-wanna-be-notified-scheduler)
+* [i-wanna-be-notified-notify](https://github.com/achimid/i-wanna-be-notified-notify)
+* [i-wanna-be-notified-catalog](https://github.com/achimid/i-wanna-be-notified-catalog)
+* [i-wanna-be-notified-scripts](https://github.com/achimid/i-wanna-be-notified-scripts)
+
+<!-- // TODO: Explicar sobre a arquitetura das aplicações, a comunicação entre elas, os processos asyncronos, o pool de workers. -->
+
+<!-- ## Outros
 
 
 ### (Ideias/Exemplos)
@@ -1709,4 +1726,4 @@ Algumas Idéias e Exemplos de utilização:
 * Criar uma aplicação onde é possível cadastrar o valor desejado de um papel do mercado de ações e quando o papel atingir determinado valor, receber um aviso, executar uma compra/venda ou até mesmo um comando desejado
 * Criar um sistema que sempre que lançar os animes que você assiste em um site de sua escolha, efetuar o download do anime automaticamente
 * Criar um sistema para monitorar quando o resultado de um concurso for publicado
-* Criar um modulo de crawler onde é possivel informar os scripts e ele armazenar as urls que já navegou para não navegar na mesma url novamente. Tomar cuidado com a condição de parada, alguma quantidade fixa de urls? tambem tomcar cuidade com o processo de urls unicas, fila? bd? Utilizar o cawler para navegar pelos contatos do github e extrair as informações das pessoas e criar uma api com isso, principalmente a lista de e-mail para fazer um e-mail marketing. Acredito que o crawler precisa executar na mesma pagina mantendo o mesmo contexto, questão de login e tudo mais.
+* Criar um modulo de crawler onde é possivel informar os scripts e ele armazenar as urls que já navegou para não navegar na mesma url novamente. Tomar cuidado com a condição de parada, alguma quantidade fixa de urls? tambem tomcar cuidade com o processo de urls unicas, fila? bd? Utilizar o cawler para navegar pelos contatos do github e extrair as informações das pessoas e criar uma api com isso, principalmente a lista de e-mail para fazer um e-mail marketing. Acredito que o crawler precisa executar na mesma pagina mantendo o mesmo contexto, questão de login e tudo mais. -->
