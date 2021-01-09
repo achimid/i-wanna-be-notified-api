@@ -46,8 +46,13 @@ Possíveis canais para receber a notificação:
 * Você pode abrir um PR com alterações.
 * Você pode falar do projeto para um amigo.
 * Você pode divulgar o projeto em suas redes sociais.
-* Você pode realizar uma doação utilizando o botão abaixo: [![paypal](https://www.paypalobjects.com/pt_BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=36KAJHCWGX5HJ)
+* Você pode realizar uma doação utilizando o botão abaixo:
 
+<p>
+  <a href="https://www.paypal.com/donate?hosted_button_id=36KAJHCWGX5HJ">
+      <img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donateCC_LG.gif" alt="Botão de Doação">
+  </a>
+</p>
 
 # API
 
