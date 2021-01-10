@@ -49,6 +49,7 @@ const setCustomParams = async (body, full) => {
 
     if (!body.options) body.options = {}    
     body.options.temporary = true
+    body.options.disabled = true
 
     if (!body.regularity) body.regularity = process.env.CRON_TIME_DEFAULT
 
