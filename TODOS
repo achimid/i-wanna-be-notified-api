@@ -30,3 +30,46 @@ Algumas ideias para a criação do front-end:
 Melhorar performance dos assets do frontend, adicionando em um CDN ou algo do tipo.
 
     
+
+## Outros
+
+
+### (Ideias/Exemplos)
+ 
+Algumas Idéias e Exemplos de utilização:
+ 
+#### Exemplo de Utilização 1
+
+* Desejo monitorar uma pagina de noticias, para receber uma notificação sempre que uma nova notícia for lançada.
+
+#### Exemplo de Utilização 2
+
+* Desejo receber por e-mail sempre que houver uma mudança no meu site empresarial.
+
+#### Exemplo de Utilização 3
+
+* Sempre que houver uma lançamento de um site (Filme, Séries ...) quero que meu sistema receba uma notificação do conteúdo para que eu possa centralizar o conteúdo de diversos sites.
+
+#### Exemplo de Utilização 4
+
+* Gostaria de receber uma notificação no telegram sempre que surgir uma notícia ou um artigo sobre um determinado assunto.
+
+#### Exemplo de Utilização 5
+
+* Gostaria de fazer um histórico da pagina por meio de imagens/printscreens, a cada alteração.
+
+#### Idéias
+
+* Criar um sistema de monitoramento que verifica se o seu site ou API está em funcionamento (Health Check)
+* Criar uma aplicação que sempre que você fizer uma postagem em seu site, automaticamente essa postagem é distribuída para um grupo no Telegram ou Whatsapp automatizando o processo.
+* Criar uma aplicação para criar históricos de sites como se fosse um backup, basta apenas apontar para a url do site e os backup começaram a ser gerados em forma de HTML... ou Imagens...
+* Criar uma API centralizadora de lançamento de Filmes
+* O mesmo descrito acima para Séries
+* O mesmo descrito acima para Animes
+* Sempre que algo novo for publicado no site ou blog, efetua o disparo de notificações para as pessoas assinantes podendo ser por e-mail, sms, rede social, ou até mesmo notificação push
+* Criar uma API centralizadora de conteúdos de Notícias
+* Criar uma API centralizadora de conteúdos de Pessoas famosas
+* Criar uma aplicação onde é possível cadastrar o valor desejado de um papel do mercado de ações e quando o papel atingir determinado valor, receber um aviso, executar uma compra/venda ou até mesmo um comando desejado
+* Criar um sistema que sempre que lançar os animes que você assiste em um site de sua escolha, efetuar o download do anime automaticamente
+* Criar um sistema para monitorar quando o resultado de um concurso for publicado
+* Criar um modulo de crawler onde é possivel informar os scripts e ele armazenar as urls que já navegou para não navegar na mesma url novamente. Tomar cuidado com a condição de parada, alguma quantidade fixa de urls? tambem tomcar cuidade com o processo de urls unicas, fila? bd? Utilizar o cawler para navegar pelos contatos do github e extrair as informações das pessoas e criar uma api com isso, principalmente a lista de e-mail para fazer um e-mail marketing. Acredito que o crawler precisa executar na mesma pagina mantendo o mesmo contexto, questão de login e tudo mais.
