@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const { OK } = require('http-status-codes')
 const commons = require('../utils/commons')
 
-const TIMEOUT_CLEAN_CACHE = process.env.TIMEOUT_CLEAN_CACHE || (1000 * 60 * 2)
+const TIMEOUT_CLEAN_CACHE = process.env.TIMEOUT_CLEAN_CACHE || (1000 * 60 * 1)
 
 const pollResponse = {}
 const pollCache = {}
