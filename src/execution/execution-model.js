@@ -43,6 +43,7 @@ const schema = mongoose.Schema({
         waitTime: { type: Number },
         printscreen: { type: Boolean },
         printscreenFullPage: { type: Boolean },
+        pdf: { type: Boolean },
         levelMax: { type: Number },
         proxy: { type: String },
         filterDomain: { type: Boolean }
@@ -67,7 +68,7 @@ const schema = mongoose.Schema({
         type: Boolean
     },
     extractedTarget: {
-        type: String
+        type: Object
     },
     extractedContent: {
         type: [{ type: Object }],

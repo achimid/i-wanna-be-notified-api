@@ -44,6 +44,7 @@ const schema = mongoose.Schema({
         waitTime: { type: Number },
         printscreen: { type: Boolean },
         printscreenFullPage: { type: Boolean },
+        pdf: { type: Boolean },
         notifyChange: {type: Boolean},
         notifyUniqueChange: {type: Boolean},
         levelMax: { type: Number },

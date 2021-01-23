@@ -25,7 +25,16 @@ const remove = (_id) => MonitoringModel.deleteOne({ _id }).then(restartTrigger)
 
 const create = (data) => MonitoringModel.create(data).then(restartTrigger)
 
-const createTemporary = (data) => MonitoringModel.create(data).then(postNewExecution)
+const createTemporary = (data) => {    
+
+    if (!data.options) data.options = {}    
+    data.options.temporary = true
+    data.disabled = true
+
+    if (!data.regularity) data.regularity = process.env.CRON_TIME_DEFAULT
+
+    return MonitoringModel.create(data).then(postNewExecution)
+}
 
 const restartTrigger = async (data) => {
     restartTriggerEvent({})

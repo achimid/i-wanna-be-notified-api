@@ -73,3 +73,23 @@ Algumas Idéias e Exemplos de utilização:
 * Criar um sistema que sempre que lançar os animes que você assiste em um site de sua escolha, efetuar o download do anime automaticamente
 * Criar um sistema para monitorar quando o resultado de um concurso for publicado
 * Criar um modulo de crawler onde é possivel informar os scripts e ele armazenar as urls que já navegou para não navegar na mesma url novamente. Tomar cuidado com a condição de parada, alguma quantidade fixa de urls? tambem tomcar cuidade com o processo de urls unicas, fila? bd? Utilizar o cawler para navegar pelos contatos do github e extrair as informações das pessoas e criar uma api com isso, principalmente a lista de e-mail para fazer um e-mail marketing. Acredito que o crawler precisa executar na mesma pagina mantendo o mesmo contexto, questão de login e tudo mais.
+
+/log
+/execution
+/notification
+
+/crawler
+/monitoring
+
+/scraper
+/scraper/pdf
+/scraper/link
+/scraper/image
+/scraper/screenshot
+
+/scraper/sync
+/scraper/sync/pdf
+/scraper/sync/link
+/scraper/sync/image
+/scraper/sync/screenshot
+
