@@ -77,8 +77,6 @@ Algumas Idéias e Exemplos de utilização:
 /log
 /execution
 /notification
-
-/crawler
 /monitoring
 
 /scraper
@@ -87,9 +85,15 @@ Algumas Idéias e Exemplos de utilização:
 /scraper/image
 /scraper/screenshot
 
-/scraper/sync
-/scraper/sync/pdf
-/scraper/sync/link
-/scraper/sync/image
-/scraper/sync/screenshot
+/sync/scraper
+/sync/scraper/pdf
+/sync/scraper/link
+/sync/scraper/image
+/sync/scraper/screenshot
 
+/crawler
+/sync/crawler
+
+
+Atualizar as documentações do Postman.
+Atualizar a documentação do Arquivo ReadME.md
