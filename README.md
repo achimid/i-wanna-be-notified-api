@@ -40,6 +40,13 @@ Possíveis canais para receber a notificação:
     Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a> ou <a href="https://jquery.com/">JQuery</a>. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
 </p>
 
+## Extração de informações - [[Web Crawler](https://pt.wikipedia.org/wiki/Rastreador_web)]
+
+<p align="justify">
+    Com o serviço do <a href="http://iwannabenotified.ddns.net/">IWannaBeNotified</a> também é possível extrair informações da página web por meio de uma técnica chamada <a href="https://pt.wikipedia.org/wiki/Coleta_de_dados_web">Web Scraping</a>.
+    Além das notificações é possível receber o conteúdo extraído da página, para isso é necessário um pouco de conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a> ou <a href="https://jquery.com/">JQuery</a>. Caso você conheça o basico dessa linguagem de script, é possível criar scripts para manipulação do conteúdo da página antes da extração das informações desejadas, desta maneira você pode extrair apenas um trexo ou uma parte da página.
+</p>
+
 
 # Como contribuir com o projeto?
 * Você pode enviar sugestões e ideias.
@@ -109,17 +116,32 @@ GET     /log/:id
 GET     /execution
 GET     /execution/:id
 
+GET     /notification
+GET     /notification/:id
+
 GET     /monitoring
 GET     /monitoring/:id
 POST    /monitoring
 PUT     /monitoring/:id
 DELETE  /monitoring/:id
 
-POST    /monitoring/sync
-POST    /monitoring/sync/full
+POST    /scraper
+POST    /scraper/pdf
+POST    /scraper/link
+POST    /scraper/image
+POST    /scraper/screenshot
+POST    /scraper/screenshot/full
 
-GET     /notification
-GET     /notification/:id
+POST    /sync/scraper
+POST    /sync/scraper/pdf
+POST    /sync/scraper/link
+POST    /sync/scraper/image
+POST    /sync/scraper/screenshot
+POST    /sync/scraper/screenshot/full
+
+POST    /crawler
+POST    /sync/crawler
+
 ~~~
 
 

@@ -67,6 +67,7 @@ const processRequest = (req, res, next) => {
         } else {
             delete poolCache[hash].res
             poolCache[hash].res = res
+            next()
         }
     } else {
         poolCache[hash] = { res }

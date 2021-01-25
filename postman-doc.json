@@ -463,94 +463,541 @@
 			]
 		},
 		{
-			"name": "Monitoring Sync",
+			"name": "Scraper",
 			"item": [
 				{
-					"name": "Criar Monitoring Sync Basico",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"document.querySelector('a').href\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "Sync",
+					"item": [
+						{
+							"name": "Extrair",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint possui a característica de extrator (scraper) e deve ser utilizado com o objetivo de extrair informações de páginas Web por meio de scripts. Por padrão será extraído o HTML completo da página.\n \n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync",
-							"protocol": "http",
-							"host": [
-								"i-wanna-be-notified-api-01",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"monitoring",
-								"sync"
-							]
+						{
+							"name": "Extrair PDF",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper/pdf",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper",
+										"pdf"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint ainda se encontra em desenvolvimento."
+							},
+							"response": []
 						},
-						"description": "Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.\n\nEste endpoint retorna apenas algumas informações da execução, para mais informações veja os exemplos.\n\n* **Este endpoint possui uma limitação de performance.**\n* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.\n* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.\n* **Esse endpoint trabalha com enfileiramento de recursos**."
-					},
-					"response": []
+						{
+							"name": "Extrair Link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper/link",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper",
+										"link"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint possui como objetivo extrair os links presentes de uma página Web.\n \n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Imagem",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper/image",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper",
+										"image"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint possui como objetivo extrair as urls de imagens presente de uma página Web.\n \n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Screenshot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper/screenshot",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper",
+										"screenshot"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar um screenshot/print da área visível de uma página Web.\n \n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Screenshot FullPage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/scraper/screenshot/full",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"scraper",
+										"screenshot",
+										"full"
+									],
+									"query": [
+										{
+											"key": "fullBody",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar um screenshot/print completo de uma página Web.\n\n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "Criar Monitoring Sync Completo",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"url\": \"https://google.com\",\n    \"name\": \"My Google Website Monitoring\",\n    \"scriptTarget\": \"Some Javascript code, example: [document.querySelector('body').innerText]\",\n    \"scriptContent\": [\"Some Javascript code, example: [document.querySelector('body').innerText]\"],\n    \"filter\": {\n        \"threshold\": 0.7,\n        \"words\": [\"apple\", \"google\"]\n    },\n    \"regularity\": \"*/3 * * * *\",\n    \"disabled\": false,\n    \"options\": {\n        \"timeout\": 30000,\n        \"waitUntil\": \"networkidle0\",\n        \"enableUserAgentRandom\": false,\n        \"useJquery\": false,\n        \"scriptTagUrl\": \"Some Javascript Tag to Inject in the page\",\n        \"waitTime\": 100,\n        \"printscreen\": false,\n        \"printscreenFullPage\": false,\n        \"notifyChange\": false,\n        \"notifyUniqueChange\": false,\n        \"levelMax\": 0,\n        \"proxy\": \"Some Proxy Url\",\n        \"temporary\": true\n    },\n    \"notifications\": [{\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - WebSocket Notification\",\n        \"websocket\": true\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Email Notification\",\n        \"email\": [\"john@email.com\"]\t\t\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Telegram Notification\",\n        \"telegram\": [{                \n            \"bot_token\": \"Telegram Bot Token for integration\",\n            \"chat_id\": \"Telegram Chat Id to send message\"\n        }]\n    },\n    {\n        \"level\": 0,\n\t\t\"template\": \"Hi My name is John - Webhook Notification\",\n        \"webhook\": [{\n            \"url\": \"https://i-wanna-be-notified-api-01.herokuapp.com/api/v1/webhook/callback\", \n            \"method\": \"POST\"\n        }]\n    }]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "Async",
+					"item": [
+						{
+							"name": "Extrair",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper"
+									]
+								},
+								"description": "Esse endpoint possui a característica de extrator (scraper) e deve ser utilizado com o objetivo de extrair informações de páginas Web por meio de scripts. Por padrão será extraído o HTML completo da página."
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync/full",
-							"protocol": "http",
-							"host": [
-								"i-wanna-be-notified-api-01",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"api",
-								"v1",
-								"monitoring",
-								"sync",
-								"full"
-							]
+						{
+							"name": "Extrair PDF",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper/pdf",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper",
+										"pdf"
+									]
+								},
+								"description": "Esse endpoint ainda se encontra em desenvolvimento."
+							},
+							"response": []
 						},
-						"description": "Este endpoint deve ser utilizado como teste para o cadastro de notificação. Todos os monitoramento criados por meio desse endpoint são temporários, isso significa que as informações (logs, notificações, monitoramento, execuções) são apagadas depois de finalizar as execuções.\n\nEste endpoint retorna todas as informações armazenadas durante a execução (monitoring, execution, executions, logs). Para mais informações veja os exemplos.\n\n* **Este endpoint possui uma limitação de performance.**\n* **Este endpoint possui uma limitação de timeout (30s) para a requisição**.\n* **Este endpoint efetua fielmente os processos que são executados no monitoramento**.\n* **Esse endpoint trabalha com enfileiramento de recursos**."
-					},
-					"response": []
+						{
+							"name": "Extrair Link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper/link",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper",
+										"link"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo extrair os links presentes de uma página Web."
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper/image",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper",
+										"image"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo extrair as urls de imagens presente de uma página Web."
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Screenshot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper/screenshot",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper",
+										"screenshot"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar um screenshot/print da área visível de uma página Web."
+							},
+							"response": []
+						},
+						{
+							"name": "Extrair Screenshot FullPage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/scraper/screenshot/full",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"scraper",
+										"screenshot",
+										"full"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar um screenshot/print completo de uma página Web."
+							},
+							"response": []
+						}
+					]
 				}
-			],
-			"event": [
+			]
+		},
+		{
+			"name": "Crawler",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Sync",
+					"item": [
+						{
+							"name": "Crawler Sync",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/sync/crawler",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"crawler"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar a extração de informações de múltiplas páginas Web. Após identificar URLs do mesmo domínio, o sistema irá navegar entre as páginas e repetir o processo de extração.\n \n* Esse endpoint possui a característica de sincronicidade, aguardando até o processo ser finalizado.\n* Este endpoint tem um limite de 30 segundos para o tempo de resposta.\n* Após exceder o tempo limite, será retornado um erro.\n* Este endpoint possui um sistema de cache (5 Minutos)"
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Async",
+					"item": [
+						{
+							"name": "Crawler Async",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://iwannabenotified.ddns.net/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/crawler",
+									"protocol": "http",
+									"host": [
+										"i-wanna-be-notified-api-01",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"crawler"
+									]
+								},
+								"description": "Esse endpoint possui como objetivo efetuar a extração de informações de múltiplas páginas Web. Após identificar URLs do mesmo domínio, o sistema irá navegar entre as páginas e repetir o processo de extração."
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
