@@ -20,5 +20,13 @@ services:
 volumes:
   mongodb_data:
     driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ~/.docker-volumes
   rabbitmq_data:
     driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ~/.docker-volumes
