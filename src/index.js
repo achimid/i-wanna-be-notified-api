@@ -1,4 +1,3 @@
-require('newrelic')
 require('dotenv').config()
 require('appmetrics-dash').attach()
 

@@ -1,5 +1,4 @@
 const healthcheck = require('./healthcheck')
-const log = require('../log/log-controller')
 const sync = require('../sync/sync-controller')
 
 const scraper = require('../scraper/scraper-controller')
@@ -19,7 +18,6 @@ module.exports = async (app) => {
     console.info('Registrando rotas...')
 
     app.use(`${prefix}`, healthcheck)
-    app.use(`${prefix}/log`, log)
     
     app.use(`${prefix}/sync`, sync)
     app.use(`${prefix}/sync/scraper`, scraperSync)

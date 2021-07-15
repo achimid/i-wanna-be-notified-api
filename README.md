@@ -1698,6 +1698,7 @@ fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync/fu
 Este projeto é dividido em diversos micro-serviço, acesse outros repositório do projeto:
 
 * [i-wanna-be-notified-api](https://github.com/achimid/i-wanna-be-notified-api)
+* [i-wanna-be-notified-log](https://github.com/achimid/i-wanna-be-notified-log)
 * [i-wanna-be-notified-front](https://github.com/achimid/i-wanna-be-notified-front)
 * [i-wanna-be-notified-worker](https://github.com/achimid/i-wanna-be-notified-worker)
 * [i-wanna-be-notified-scheduler](https://github.com/achimid/i-wanna-be-notified-scheduler)

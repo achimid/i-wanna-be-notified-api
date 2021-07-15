@@ -30,7 +30,6 @@
     "joi": "^17.3.0",
     "mongoose": "^5.11.9",
     "mquery": ">=3.2.3",
-    "newrelic": "^7.0.2",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.0",
     "object-sizeof": "^1.6.1",
