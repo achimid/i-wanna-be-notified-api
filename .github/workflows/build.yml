@@ -3,7 +3,7 @@ name: Docker Build and Push
 on: [push]
 
 jobs:
-  javascript-express:
+  build:
     runs-on: ubuntu-latest
 
     steps:
