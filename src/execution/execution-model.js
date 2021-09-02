@@ -46,7 +46,8 @@ const schema = mongoose.Schema({
         pdf: { type: Boolean },
         levelMax: { type: Number },
         proxy: { type: String },
-        filterDomain: { type: Boolean }
+        filterDomain: { type: Boolean },
+        splitable: { type: Boolean }
     },
     filter: {
         threshold: Number,

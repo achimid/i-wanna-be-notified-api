@@ -23,6 +23,13 @@ const link = (data) => {
     return create(data)
 }
 
+const linkDistinct = (data) => {
+    
+    if (!data.scriptTarget) data.scriptTarget = "[...new Set([...document.querySelectorAll('a')])].map(e => e.href)"
+    
+    return create(data)
+}
+
 const image = (data) => {
 
     if (!data.scriptTarget) data.scriptTarget = "[...document.querySelectorAll('img')].map(e => e.src)"
@@ -47,10 +54,11 @@ const screenshotFull = (data) => {
 }
 
 module.exports = {
-    create,
-    pdf,
-    link,
+    pdf,    
     image,
+    create,
+    link,
+    linkDistinct,    
     screenshot,
-    screenshotFull
+    screenshotFull    
 }

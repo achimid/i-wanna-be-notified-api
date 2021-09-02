@@ -21,7 +21,8 @@ const optionsSchema =       Joi.object().keys({
     levelMax:               Joi.number(),
     proxy:                  Joi.string(),
     temporary:              Joi.optional(),
-    filterDomain:           Joi.optional()
+    filterDomain:           Joi.optional(),
+    splitable:              Joi.optional()
 })
 
 const notificationSchema = Joi.object().keys({

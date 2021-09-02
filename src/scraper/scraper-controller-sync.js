@@ -28,6 +28,14 @@ router.post('/link', cache.processRequest, (req, res) => {
         .catch(res.onError)
 })
 
+router.post('/link/distinct', cache.processRequest, (req, res) => {
+    console.log('Creating a scraping - Link distinct - Sync')
+    return sync.addWebHook({ ...req.body })
+        .then(service.linkDistinct)
+        .then(sync.processRequest(req, res))
+        .catch(res.onError)
+})
+
 router.post('/image', cache.processRequest, (req, res) => {
     console.log('Creating a scraping - Image - Sync')
     return sync.addWebHook({ ...req.body })
