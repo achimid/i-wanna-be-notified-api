@@ -4,6 +4,7 @@ const mongoose = require('../config/mongoose-multi-db')
 const schema = mongoose.Schema({
     uuid: { 
         type: String, 
+        index: true
     },
     executionId: { 
         type: String, 

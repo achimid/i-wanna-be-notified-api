@@ -17,7 +17,8 @@ const schema = mongoose.Schema({
         default: undefined    
     },
     uuid: { 
-        type: String
+        type: String,
+        index: true
     },
     monitoringId: { 
         type: String
