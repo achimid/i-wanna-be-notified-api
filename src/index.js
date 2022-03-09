@@ -1,5 +1,4 @@
 require('dotenv').config()
-require('appmetrics-dash').attach()
 
 
 const cors = require('cors')
