@@ -1,8 +1,12 @@
+const fetch = require('node-fetch')
 const { clearObj } = require('../utils/commons')
-const { restartTriggerEvent } = require('./monitoring-producer')
 const { postExecution } = require('../execution/execution-service')
 
 const MonitoringModel = require('./monitoring-model')
+
+
+const SCHEDULER_API_URL_BASE = process.env.SCHEDULER_API_URL
+
 
 const limit = parseInt(process.env.DEFAULT_ENDPOINT_LIST_LIMIT)
 
@@ -37,7 +41,7 @@ const createTemporary = (data) => {
 }
 
 const restartTrigger = async (data) => {
-    restartTriggerEvent({})
+    restartSchedulerTrigger()
     return data
 }
 
@@ -48,6 +52,9 @@ const postNewExecution = async (data) => {
     
     return data
 }
+
+const restartSchedulerTrigger = async () => fetch(`${SCHEDULER_API_URL_BASE}/admin/restart`)
+    .then(() => console.info('Restart Trigger called with success'))
 
 module.exports = {
     findByFilter,
