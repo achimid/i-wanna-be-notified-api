@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -13,8 +13,10 @@ RUN npm install
 # If you are building your code for production
 RUN npm ci --only=production
 
+ENV NEW_RELIC_NO_CONFIG_FILE=true
+
 # Bundle app source
 COPY . .
 
-EXPOSE 9001
+EXPOSE 9011
 CMD [ "node", "src/index.js" ]
