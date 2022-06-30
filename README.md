@@ -1695,6 +1695,8 @@ fetch("http://i-wanna-be-notified-api-01.herokuapp.com/api/v1/monitoring/sync/fu
 
 ## Arquitetura
 
+![Imagem da arquitetura do projeto](https://github.com/achimid/i-wanna-be-notified-api/blob/main/.github/i-wanna-be-notified-infra.drawio.png?raw=true)
+
 Este projeto é dividido em diversos micro-serviço, acesse outros repositório do projeto:
 
 * [i-wanna-be-notified-api](https://github.com/achimid/i-wanna-be-notified-api)
